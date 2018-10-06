@@ -1,0 +1,69 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Admin.master.vb" Inherits="SalesSurveysApplication.Admin" %>
+
+<%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Sales Survey Maintenance Module</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link id="Link1" href="~/styles/base.css" rel="stylesheet" type="text/css" runat="server" />
+</head>
+<body style="margin: 0px; padding: 0px;">
+    <form id="form1" runat="server">
+    <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+    </telerik:RadScriptManager>
+    <div>
+        <div class="Admin_Header">Sales Survey Maintenance Module</div>
+        <div id="menubar">
+            <telerik:RadMenu ID="RadMenu1" Runat="server">
+                <Items>
+                    <telerik:RadMenuItem runat="server" 
+                        Text="User Administration">
+                        <Items>
+                            <telerik:RadMenuItem runat="server" NavigateUrl="~/Admin/Usermnt.aspx" 
+                                Text="User Maintenance">
+                            </telerik:RadMenuItem>
+                            <telerik:RadMenuItem runat="server" NavigateUrl="~/Admin/Groupmnt.aspx" 
+                                Text="User Group Maintenance">
+                            </telerik:RadMenuItem>
+                        </Items>
+                    </telerik:RadMenuItem>
+                    <telerik:RadMenuItem runat="server" 
+                        Text="Survey Administration">
+                        <Items>
+                            <telerik:RadMenuItem runat="server" NavigateUrl="~/Admin/Surveymnt.aspx" 
+                                Text="Survey Maintenance">
+                            </telerik:RadMenuItem>
+                         
+                            <telerik:RadMenuItem runat="server" NavigateUrl="~/Admin/SurveyGroupsMnt.aspx" 
+                                Text="Survey Group Maintenance">
+                            </telerik:RadMenuItem>
+                            <telerik:RadMenuItem runat="server" Text="Survey Source Maintenance" 
+                                NavigateUrl="~/Admin/SurveySourceMnt.aspx">
+                            </telerik:RadMenuItem>
+                         </Items>
+                    </telerik:RadMenuItem>
+                    <telerik:RadMenuItem runat="server" NavigateUrl="~/Admin/OrgMasterMnt.aspx" 
+                        Text="Organization Master Maintenance">
+                    </telerik:RadMenuItem>
+                    <telerik:RadMenuItem runat="server" Text="Utilities">
+                        <Items>
+                            <telerik:RadMenuItem runat="server" NavigateUrl="~/Utilities/IDLookups.aspx" Text="ID Lookups">
+                            </telerik:RadMenuItem>
+                        </Items>
+                    </telerik:RadMenuItem>
+                </Items>
+            </telerik:RadMenu>
+            </div>
+        <div style="padding-left: 25px;">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

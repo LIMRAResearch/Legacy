@@ -1,0 +1,44 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="SalesSurveysApplication.Site" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+    <link id="Link1" href="~/styles/base.css" rel="stylesheet" type="text/css" runat="server" />
+</head>
+<body id="sitemasterBody">
+    <form id="form1" runat="server">
+    <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+    </telerik:RadScriptManager>
+    <div>
+        <div id="menubar">
+            <telerik:RadMenu ID="RadMenu1"  runat="server" 
+                DataNavigateUrlField="NavigateURL" DataSourceID="XmlDataSource1" 
+                DataTextField="Text">               
+            </telerik:RadMenu>
+            <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/xml/Menu.xml" 
+                XPath="Menu/MenuItems[@SurveyID=0]/Item"></asp:XmlDataSource>
+        </div>
+        <div style="width: 100%;">
+          <div class="PageTitleLeft"><asp:Literal ID="litPageTitle" runat="server"></asp:Literal></div>
+         <div id="breadCrumbs" class="crumbs">
+            <asp:PlaceHolder ID="phBreadCrumbs" runat="server" ></asp:PlaceHolder>
+        </div>        
+        </div>
+       <div style="clear: both;"></div>
+      
+    </div>
+    <div id="sitemasterContentHolder" class="sitemasterContentHolder">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div class="clear">
+    </div>
+    <div id="sitemasterFootNote" class="pageFootnote">
+        <%--[Footnote: TBD]--%>
+    </div>
+    </form>
+</body>
+</html>
