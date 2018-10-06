@@ -1,0 +1,199 @@
+﻿/* Notes: 
+     1. All font size units are in pts or absolute size. 
+     2. Color scheme is Gray scale with Maroon for emphasis. 
+*/
+
+/* Navigation bar abbreviated prefix nB */
+.navBar
+{
+    width:100%;
+    height: 30px;
+    background-color: #eeeeee;
+    border-bottom: solid 1px gray; 
+}
+
+/* Navigation Menu abbreviated prefix nM*/
+/*Core Menu CSS [Modify with care!]*/
+
+.nMclear
+{
+    font-size: 1px;
+    height: 0px;
+    width: 0px;
+    clear: left;
+    line-height: 0px;
+    display: block;
+    float: none !important;
+}
+.nMmc .nMdivider
+{
+    display: block;
+    font-size: 1px;
+    border-width: 0px;
+    border-style: solid;
+    position: relative;
+    z-index: 1;
+}
+.nMmc .nMdividery
+{
+    float: left;
+    width: 0px;
+}
+.nMmc .nMtitle
+{
+    display: block;
+    cursor: default;
+    white-space: nowrap;
+    position: relative;
+    z-index: 1;
+}
+.nMmc
+{
+    position: relative;
+    z-index: 10;
+}
+.nMmc a, .nMmc li
+{
+    float: left;
+    display: block;
+    white-space: nowrap;
+    position: relative;
+    z-index: 1;
+}
+.nMmc div a, .nMmc ul a, .nMmc ul li
+{
+    float: none;
+}
+.nMsh div a
+{
+    float: left;
+}
+.nMmc div
+{
+    visibility: hidden;
+    position: absolute;
+}
+.nMmc li
+{
+    z-index: auto;
+}
+.nMmc ul
+{
+    left: -10000px;
+    position: absolute;
+    z-index: 10;
+}
+.nMmc, .nMmc ul
+{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.nMmc li a
+{
+    float: none;
+}
+.nMmc li:hover > ul
+{
+    left: auto;
+}
+#nM0 ul
+{
+    top: 100%;
+}
+#nM0 ul li:hover > ul
+{
+    top: 0px;
+    left: 100%;
+}
+
+
+/*!!!!!!!!!!! Menu Styles [Modify as necessary!] !!!!!!!!!!!*/
+
+.nMparent
+{
+    font: georgia;
+    font-variant: small-caps;
+    font-size: 10pt;
+    font-weight: bold;    
+}
+
+/*"""""""" (MAIN) Items""""""""*/
+#nM0 a
+{
+    padding: 5px 4px 5px 5px;
+    color: Maroon; /* color: #555555; */
+    font-family: Arial;
+    font-size: 10pt;
+    text-decoration: none;
+}
+
+
+/*"""""""" (SUB) Container""""""""*/
+#nM0 div, #nM0 ul
+{
+    padding: 10px;
+    margin: -2px 0px 0px;
+    background-color: #eeeeee;/* background-color: transparent; */
+    border-style: none;
+}
+
+
+/*"""""""" (SUB) Items""""""""*/
+#nM0 div a, #nM0 ul a
+{
+    padding: 3px 10px 3px 5px;
+    background-color: #eeeeee;/* background-color: transparent; */
+    font-size: 10pt;
+    border-width: 0px;
+    border-style: none;
+}
+
+
+/*"""""""" (SUB) Hover State""""""""*/
+#nM0 div a:hover, #nM0 ul a:hover
+{
+    background-color: #dadada;
+    color: #cc0000;
+}
+
+
+/*"""""""" (SUB) Active State""""""""*/
+body #nM0 div .nMactive, body #nM0 div .nMactive:hover
+{
+    background-color: #dadada;
+    color: #cc0000;
+}
+
+
+/*"""""""" Individual Titles""""""""*/
+#nM0 .nMtitle
+{
+    cursor: default;
+    padding: 3px 0px 3px 4px;
+    color: #444444;
+    font-family: arial;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+
+/*"""""""" Individual Horizontal Dividers""""""""*/
+#nM0 .nMdividerx
+{
+    border-top-width: 1px;
+    margin: 4px 0px;
+    border-color: #bfbfbf;
+}
+
+
+/*"""""""" Individual Vertical Dividers""""""""*/
+#nM0 .nMdividery
+{
+    border-left-width: 1px;
+    height: 15px;
+    margin: 4px 2px 0px;
+    border-color: #aaaaaa;
+}
+
+
