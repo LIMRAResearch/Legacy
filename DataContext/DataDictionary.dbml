@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="SalesSurveys" Class="DataDictionaryDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=WINDEV13;Initial Catalog=SalesSurveys;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SalesSurveysConnectionStringDev" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DataDictionary" Member="DataDictionaries">
+    <Type Name="DataDictionary">
+      <Column Name="SurveyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FieldID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Field" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="SortKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="xlSheet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="xlRow" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="xlColumn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Source" Type="System.Char" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DataType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Metric" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Scale" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Market" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Channel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Product" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

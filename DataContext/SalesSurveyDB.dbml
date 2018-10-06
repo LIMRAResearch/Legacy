@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataSource" Class="SalesSurveyDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=CTDev03;Initial Catalog=SalesSurveysDev;Persist Security Info=True;User ID=SalesSurvey1" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SalesSurveysConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.admGroup" Member="admGroups">
+    <Type Name="admGroup">
+      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GroupName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="GroupDescription" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="admGroup_admUserGroup" Member="admUserGroups" ThisKey="GroupID" OtherKey="GroupID" Type="admUserGroup" />
+    </Type>
+  </Table>
+  <Table Name="dbo.admUser" Member="admUsers">
+    <Type Name="admUser">
+      <Column Name="OnyxID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LoginID" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Association Name="admUser_admUserGroup" Member="admUserGroups" ThisKey="OnyxID" OtherKey="OnyxID" Type="admUserGroup" />
+      <Association Name="admUser_admUserSurvey" Member="admUserSurveys" ThisKey="OnyxID" OtherKey="OnyxID" Type="admUserSurvey" />
+    </Type>
+  </Table>
+  <Table Name="dbo.admUserGroup" Member="admUserGroups">
+    <Type Name="admUserGroup">
+      <Column Name="UserGroupID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OnyxID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="admGroup_admUserGroup" Member="admGroup" ThisKey="GroupID" OtherKey="GroupID" Type="admGroup" IsForeignKey="true" />
+      <Association Name="admUser_admUserGroup" Member="admUser" ThisKey="OnyxID" OtherKey="OnyxID" Type="admUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.admUserSurvey" Member="admUserSurveys">
+    <Type Name="admUserSurvey">
+      <Column Name="UserSurveyID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OnyxID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SurveyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="admUser_admUserSurvey" Member="admUser" ThisKey="OnyxID" OtherKey="OnyxID" Type="admUser" IsForeignKey="true" />
+      <Association Name="dSurvey_admUserSurvey" Member="dSurvey" ThisKey="SurveyID" OtherKey="SurveyID" Type="dSurvey" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ddDataTypes" Member="ddDataTypes">
+    <Type Name="ddDataType">
+      <Column Name="DataTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DataType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="vbConstant" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ddDataType_ddField" Member="ddFields" ThisKey="DataTypeID" OtherKey="DataTypeID" Type="ddField" />
+      <Association Name="ddDataType_fLayout" Member="fLayouts" ThisKey="DataTypeID" OtherKey="DataTypeID" Type="fLayout" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dSurveySeries" Member="dSurveySeries">
+    <Type Name="dSurveySeries">
+      <Column Name="SurveySeriesID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SurveyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateID" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quarter" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="dSurveySeries_fData" Member="fDatas" ThisKey="SurveySeriesID" OtherKey="SurveySeriesID" Type="fData" />
+      <Association Name="dSurveySeries_cPCYA" Member="cPCYAs" ThisKey="SurveySeriesID" OtherKey="SurveySeriesID" Type="cPCYA" />
+      <Association Name="dSurveySeries_cPYTD" Member="cPYTDs" ThisKey="SurveySeriesID" OtherKey="SurveySeriesID" Type="cPYTD" />
+      <Association Name="dSurveySeries_cYTD" Member="cYTDs" ThisKey="SurveySeriesID" OtherKey="SurveySeriesID" Type="cYTD" />
+      <Association Name="dSurveySeries_ccYTD" Member="ccYTDs" ThisKey="SurveySeriesID" OtherKey="SurveySeriesID" Type="ccYTD" />
+      <Association Name="dSurveySeries_ccPYTD" Member="ccPYTDs" ThisKey="SurveySeriesID" OtherKey="SurveySeriesID" Type="ccPYTD" />
+      <Association Name="dSurveySeries_ccPCYA" Member="ccPCYAs" ThisKey="SurveySeriesID" OtherKey="SurveySeriesID" Type="ccPCYA" />
+      <Association Name="dSurveySeries_cData" Member="cDatas" ThisKey="SurveySeriesID" OtherKey="SurveySeriesID" Type="cData" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fData" Member="fDatas">
+    <Type Name="fData">
+      <Column Name="DataID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FieldID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WorkbookID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SurveySeriesID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MOR" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="fData_cPCYA" Member="cPCYA" ThisKey="DataID" OtherKey="DataID" Type="cPCYA" Cardinality="One" />
+      <Association Name="fData_cPYTD" Member="cPYTD" ThisKey="DataID" OtherKey="DataID" Type="cPYTD" Cardinality="One" />
+      <Association Name="fData_cYTD" Member="cYTD" ThisKey="DataID" OtherKey="DataID" Type="cYTD" Cardinality="One" />
+      <Association Name="dSurveySeries_fData" Member="dSurveySeries" Storage="_dSurveySery" ThisKey="SurveySeriesID" OtherKey="SurveySeriesID" Type="dSurveySeries" IsForeignKey="true" />
+      <Association Name="ddField_fData" Member="ddField" ThisKey="FieldID" OtherKey="FieldID" Type="ddField" IsForeignKey="true" />
+      <Association Name="dWorkbook_fData" Member="dWorkbook" ThisKey="WorkbookID" OtherKey="WorkbookID" Type="dWorkbook" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.rExtractData" Member="rExtractDatas">
+    <Type Name="rExtractData">
+      <Column Name="ExtractID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Responses" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TestData" Member="TestDatas">
+    <Type Name="TestData">
+      <Column Name="DataID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FieldID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WorkbookID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SurveySeriesID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MOR" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dOrgMaster" Member="dOrgMasters">
+    <Type Name="dOrgMaster">
+      <Column Name="OrganizationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CRMID" Type="System.String" DbType="NVarChar(25) " CanBeNull="true" />
+      <Column Name="LegalName" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="InactiveB" Type="System.Boolean" CanBeNull="false" />
+      <Association Name="dOrgMaster_dSource" Member="dSources" ThisKey="OrganizationID" OtherKey="OrganizationID" Type="dSource" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dFrequency" Member="dFrequencies">
+    <Type Name="dFrequency">
+      <Column Name="FrequencyAllowedID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Frequency" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="AllowedMonth" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AllowedDay" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dGroups" Member="dGroups">
+    <Type Name="dGroup">
+      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PrefGroupName" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="SurveyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ddExceptionSets" Member="ddExceptionSets">
+    <Type Name="ddExceptionSet">
+      <Column Name="ExceptionSetID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ddExceptionSet_ddField" Member="ddFields" ThisKey="ExceptionSetID" OtherKey="ExceptionSetID" Type="ddField" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ddMetrics" Member="ddMetrics">
+    <Type Name="ddMetric">
+      <Column Name="MetricID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Metric" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="ddMetric_ddcField" Member="ddcFields" ThisKey="MetricID" OtherKey="MetricID" Type="ddcField" />
+      <Association Name="ddMetric_ddField" Member="ddFields" ThisKey="MetricID" OtherKey="MetricID" Type="ddField" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ddScales" Member="ddScales">
+    <Type Name="ddScale">
+      <Column Name="ScaleID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Scale" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ddScale_ddcField" Member="ddcFields" ThisKey="ScaleID" OtherKey="ScaleID" Type="ddcField" />
+      <Association Name="ddScale_ddField" Member="ddFields" ThisKey="ScaleID" OtherKey="ScaleID" Type="ddField" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ddUnits" Member="ddUnits">
+    <Type Name="ddUnit">
+      <Column Name="UnitID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ddUnit_ddcField" Member="ddcFields" ThisKey="UnitID" OtherKey="UnitID" Type="ddcField" />
+      <Association Name="ddUnit_ddField" Member="ddFields" ThisKey="UnitID" OtherKey="UnitID" Type="ddField" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ddCodeSets" Member="ddCodeSets">
+    <Type Name="ddCodeSet">
+      <Column Name="CodeSetID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodeSet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ddCodeSet_ddCode" Member="ddCodes" ThisKey="CodeSetID" OtherKey="CodeSetID" Type="ddCode" />
+      <Association Name="ddCodeSet_ddAttribute" Member="ddAttributes" ThisKey="CodeSetID" OtherKey="CodeSetID" Type="ddAttribute" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ddCodes" Member="ddCodes">
+    <Type Name="ddCode">
+      <Column Name="CodeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodeSetID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ddCodeSet_ddCode" Member="ddCodeSet" ThisKey="CodeSetID" OtherKey="CodeSetID" Type="ddCodeSet" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ddcFields" Member="ddcFields">
+    <Type Name="ddcField">
+      <Column Name="FieldID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SurveyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Source" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DataTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ExceptionSetID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MetricID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ScaleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UnitID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="ddcField_cData" Member="cDatas" ThisKey="FieldID" OtherKey="FieldID" Type="cData" />
+      <Association Name="ddMetric_ddcField" Member="ddMetric" ThisKey="MetricID" OtherKey="MetricID" Type="ddMetric" IsForeignKey="true" />
+      <Association Name="ddScale_ddcField" Member="ddScale" ThisKey="ScaleID" OtherKey="ScaleID" Type="ddScale" IsForeignKey="true" />
+      <Association Name="ddUnit_ddcField" Member="ddUnit" ThisKey="UnitID" OtherKey="UnitID" Type="ddUnit" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ddFields" Member="ddFields">
+    <Type Name="ddField">
+      <Column Name="FieldID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SortKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SurveyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Source" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="Field" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="xlRow" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="xlColumn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="xlSheet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="xlCell" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DataTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ExceptionSetID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MetricID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ScaleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UnitID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="ddField_fData" Member="fDatas" ThisKey="FieldID" OtherKey="FieldID" Type="fData" />
+      <Association Name="ddField_fLayout" Member="fLayout" ThisKey="FieldID" OtherKey="FieldID" Type="fLayout" Cardinality="One" />
+      <Association Name="ddDataType_ddField" Member="ddDataType" ThisKey="DataTypeID" OtherKey="DataTypeID" Type="ddDataType" IsForeignKey="true" />
+      <Association Name="ddExceptionSet_ddField" Member="ddExceptionSet" ThisKey="ExceptionSetID" OtherKey="ExceptionSetID" Type="ddExceptionSet" IsForeignKey="true" />
+      <Association Name="ddMetric_ddField" Member="ddMetric" ThisKey="MetricID" OtherKey="MetricID" Type="ddMetric" IsForeignKey="true" />
+      <Association Name="ddScale_ddField" Member="ddScale" ThisKey="ScaleID" OtherKey="ScaleID" Type="ddScale" IsForeignKey="true" />
+      <Association Name="ddUnit_ddField" Member="ddUnit" ThisKey="UnitID" OtherKey="UnitID" Type="ddUnit" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cPCYA" Member="cPCYAs">
+    <Type Name="cPCYA">
+      <Column Name="DataID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SurveySeriesID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SourceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FieldID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MOR" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="dSurveySeries_cPCYA" Member="dSurveySeries" ThisKey="SurveySeriesID" OtherKey="SurveySeriesID" Type="dSurveySeries" IsForeignKey="true" />
+      <Association Name="fData_cPCYA" Member="fData" ThisKey="DataID" OtherKey="DataID" Type="fData" IsForeignKey="true" />
+      <Association Name="dSource_cPCYA" Member="dSource" ThisKey="SourceID" OtherKey="SourceID" Type="dSource" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cPYTD" Member="cPYTDs">
+    <Type Name="cPYTD">
+      <Column Name="DataID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SurveySeriesID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SourceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FieldID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MOR" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="dSurveySeries_cPYTD" Member="dSurveySeries" ThisKey="SurveySeriesID" OtherKey="SurveySeriesID" Type="dSurveySeries" IsForeignKey="true" />
+      <Association Name="fData_cPYTD" Member="fData" ThisKey="DataID" OtherKey="DataID" Type="fData" IsForeignKey="true" />
+      <Association Name="dSource_cPYTD" Member="dSource" ThisKey="SourceID" OtherKey="SourceID" Type="dSource" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cYTD" Member="cYTDs">
+    <Type Name="cYTD">
+      <Column Name="DataID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SurveySeriesID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SourceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FieldID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MOR" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="dSurveySeries_cYTD" Member="dSurveySeries" ThisKey="SurveySeriesID" OtherKey="SurveySeriesID" Type="dSurveySeries" IsForeignKey="true" />
+      <Association Name="fData_cYTD" Member="fData" ThisKey="DataID" OtherKey="DataID" Type="fData" IsForeignKey="true" />
+      <Association Name="dSource_cYTD" Member="dSource" ThisKey="SourceID" OtherKey="SourceID" Type="dSource" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ccYTD" Member="ccYTDs">
+    <Type Name="ccYTD">
+      <Column Name="DataID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SurveySeriesID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SourceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FieldID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MOR" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="dSurveySeries_ccYTD" Member="dSurveySeries" ThisKey="SurveySeriesID" OtherKey="SurveySeriesID" Type="dSurveySeries" IsForeignKey="true" />
+      <Association Name="cData_ccYTD" Member="cData" ThisKey="DataID" OtherKey="DataID" Type="cData" IsForeignKey="true" />
+      <Association Name="dSource_ccYTD" Member="dSource" ThisKey="SourceID" OtherKey="SourceID" Type="dSource" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ccPYTD" Member="ccPYTDs">
+    <Type Name="ccPYTD">
+      <Column Name="DataID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SurveySeriesID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SourceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FieldID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MOR" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="dSurveySeries_ccPYTD" Member="dSurveySeries" ThisKey="SurveySeriesID" OtherKey="SurveySeriesID" Type="dSurveySeries" IsForeignKey="true" />
+      <Association Name="cData_ccPYTD" Member="cData" ThisKey="DataID" OtherKey="DataID" Type="cData" IsForeignKey="true" />
+      <Association Name="dSource_ccPYTD" Member="dSource" ThisKey="SourceID" OtherKey="SourceID" Type="dSource" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ccPCYA" Member="ccPCYAs">
+    <Type Name="ccPCYA">
+      <Column Name="DataID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SurveySeriesID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SourceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FieldID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MOR" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="dSurveySeries_ccPCYA" Member="dSurveySeries" ThisKey="SurveySeriesID" OtherKey="SurveySeriesID" Type="dSurveySeries" IsForeignKey="true" />
+      <Association Name="cData_ccPCYA" Member="cData" ThisKey="DataID" OtherKey="DataID" Type="cData" IsForeignKey="true" />
+      <Association Name="dSource_ccPCYA" Member="dSource" ThisKey="SourceID" OtherKey="SourceID" Type="dSource" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cData" Member="cDatas">
+    <Type Name="cData">
+      <Column Name="DataID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FieldID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WorkbookID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SurveySeriesID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MOR" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="cData_ccYTD" Member="ccYTD" ThisKey="DataID" OtherKey="DataID" Type="ccYTD" Cardinality="One" />
+      <Association Name="cData_ccPYTD" Member="ccPYTD" ThisKey="DataID" OtherKey="DataID" Type="ccPYTD" Cardinality="One" />
+      <Association Name="cData_ccPCYA" Member="ccPCYA" ThisKey="DataID" OtherKey="DataID" Type="ccPCYA" Cardinality="One" />
+      <Association Name="ddcField_cData" Member="ddcField" ThisKey="FieldID" OtherKey="FieldID" Type="ddcField" IsForeignKey="true" />
+      <Association Name="dSurveySeries_cData" Member="dSurveySeries" ThisKey="SurveySeriesID" OtherKey="SurveySeriesID" Type="dSurveySeries" IsForeignKey="true" />
+      <Association Name="dWorkbook_cData" Member="dWorkbook" ThisKey="WorkbookID" OtherKey="WorkbookID" Type="dWorkbook" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ddAlgorithms" Member="ddAlgorithms">
+    <Type Name="ddAlgorithm">
+      <Column Name="SurveyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FieldID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Algorithm" Type="System.String" DbType="NChar(18) NOT NULL" CanBeNull="false" />
+      <Column Name="Args" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ddAttributes" Member="ddAttributes">
+    <Type Name="ddAttribute">
+      <Column Name="SurveyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FieldID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodeSetID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ddCodeSet_ddAttribute" Member="ddCodeSet" ThisKey="CodeSetID" OtherKey="CodeSetID" Type="ddCodeSet" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dWorkbooks" Member="dWorkbooks">
+    <Type Name="dWorkbook">
+      <Column Name="WorkbookID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SurveySeriesID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SourceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateID" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="WorkbookName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="WorkbookStatus" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Responses" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="dWorkbook_fData" Member="fDatas" ThisKey="WorkbookID" OtherKey="WorkbookID" Type="fData" />
+      <Association Name="dWorkbook_cData" Member="cDatas" ThisKey="WorkbookID" OtherKey="WorkbookID" Type="cData" />
+      <Association Name="dSource_dWorkbook" Member="dSource" ThisKey="SourceID" OtherKey="SourceID" Type="dSource" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dSource" Member="dSources">
+    <Type Name="dSource">
+      <Column Name="SourceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SourceName" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="PrefName" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="OrganizationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SurveyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="dSource_cPCYA" Member="cPCYAs" ThisKey="SourceID" OtherKey="SourceID" Type="cPCYA" />
+      <Association Name="dSource_cPYTD" Member="cPYTDs" ThisKey="SourceID" OtherKey="SourceID" Type="cPYTD" />
+      <Association Name="dSource_cYTD" Member="cYTDs" ThisKey="SourceID" OtherKey="SourceID" Type="cYTD" />
+      <Association Name="dSource_ccYTD" Member="ccYTDs" ThisKey="SourceID" OtherKey="SourceID" Type="ccYTD" />
+      <Association Name="dSource_ccPYTD" Member="ccPYTDs" ThisKey="SourceID" OtherKey="SourceID" Type="ccPYTD" />
+      <Association Name="dSource_ccPCYA" Member="ccPCYAs" ThisKey="SourceID" OtherKey="SourceID" Type="ccPCYA" />
+      <Association Name="dSource_dWorkbook" Member="dWorkbooks" ThisKey="SourceID" OtherKey="SourceID" Type="dWorkbook" />
+      <Association Name="dOrgMaster_dSource" Member="dOrgMaster" ThisKey="OrganizationID" OtherKey="OrganizationID" Type="dOrgMaster" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dSurveys" Member="dSurveys">
+    <Type Name="dSurvey">
+      <Column Name="SurveyID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SurveyName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SurveyFrequency" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="SurveyDescription" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="FolderPath" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="SurveyHomePage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="dSurvey_admUserSurvey" Member="admUserSurveys" ThisKey="SurveyID" OtherKey="SurveyID" Type="admUserSurvey" />
+      <Association Name="dSurvey_fPage" Member="fPages" ThisKey="SurveyID" OtherKey="SurveyID" Type="fPage" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fPages" Member="fPages">
+    <Type Name="fPage">
+      <Column Name="SurveyID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PageNumber" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PageDescription" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="fPage_fLayout" Member="fLayouts" ThisKey="SurveyID,PageNumber" OtherKey="SurveyID,PageNumber" Type="fLayout" />
+      <Association Name="dSurvey_fPage" Member="dSurvey" ThisKey="SurveyID" OtherKey="SurveyID" Type="dSurvey" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fRows" Member="fRows">
+    <Type Name="fRow">
+      <Column Name="SurveyID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RowNumber" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RowDescription" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PageNumber" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SectionNumber" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="fRow_fLayout" Member="fLayouts" ThisKey="SurveyID,RowNumber,PageNumber,SectionNumber" OtherKey="SurveyID,RowNumber,PageNumber,SectionNumber" Type="fLayout" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fSections" Member="fSections">
+    <Type Name="fSection">
+      <Column Name="SurveyID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SectionNumber" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SectionDescription" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PageNumber" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="fSection_fLayout" Member="fLayouts" ThisKey="SurveyID,SectionNumber,PageNumber" OtherKey="SurveyID,SectionNumber,PageNumber" Type="fLayout" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fColumns" Member="fColumns">
+    <Type Name="fColumn">
+      <Column Name="SurveyID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ColumnNumber" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ColumnDescription" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PageNumber" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SectionNumber" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="fColumn_fLayout" Member="fLayouts" ThisKey="SurveyID,ColumnNumber,PageNumber,SectionNumber" OtherKey="SurveyID,ColumnNumber,PageNumber,SectionNumber" Type="fLayout" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fLayout" Member="fLayouts">
+    <Type Name="fLayout">
+      <Column Name="FieldID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SurveyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PageNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SectionNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RowNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ColumnNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DataTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Inactive" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="ddDataType_fLayout" Member="ddDataType" ThisKey="DataTypeID" OtherKey="DataTypeID" Type="ddDataType" IsForeignKey="true" />
+      <Association Name="ddField_fLayout" Member="ddField" ThisKey="FieldID" OtherKey="FieldID" Type="ddField" IsForeignKey="true" />
+      <Association Name="fColumn_fLayout" Member="fColumn" ThisKey="SurveyID,ColumnNumber,PageNumber,SectionNumber" OtherKey="SurveyID,ColumnNumber,PageNumber,SectionNumber" Type="fColumn" IsForeignKey="true" />
+      <Association Name="fPage_fLayout" Member="fPage" ThisKey="SurveyID,PageNumber" OtherKey="SurveyID,PageNumber" Type="fPage" IsForeignKey="true" />
+      <Association Name="fRow_fLayout" Member="fRow" ThisKey="SurveyID,RowNumber,PageNumber,SectionNumber" OtherKey="SurveyID,RowNumber,PageNumber,SectionNumber" Type="fRow" IsForeignKey="true" />
+      <Association Name="fSection_fLayout" Member="fSection" ThisKey="SurveyID,SectionNumber,PageNumber" OtherKey="SurveyID,SectionNumber,PageNumber" Type="fSection" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ImportDetail" Member="ImportDetails">
+    <Type Name="ImportDetail">
+      <Column Name="WorkbookName" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ImportResult" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ImportDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SurveyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
