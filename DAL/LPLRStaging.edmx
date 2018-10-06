@@ -1,0 +1,1359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LPLRStagingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="LPLRStagingModelStoreContainer">
+          <EntitySet Name="_FileInfo" EntityType="LPLRStagingModel.Store._FileInfo" store:Type="Tables" store:Schema="dbo" store:Name="_FileInfo">
+            <DefiningQuery>SELECT 
+      [_FileInfo].[FileId] AS [FileId], 
+      [_FileInfo].[FileName] AS [FileName], 
+      [_FileInfo].[NAIC] AS [NAIC], 
+      [_FileInfo].[StartDate] AS [StartDate], 
+      [_FileInfo].[EndDate] AS [EndDate], 
+      [_FileInfo].[FileNumber] AS [FileNumber], 
+      [_FileInfo].[LagDate] AS [LagDate]
+      FROM [dbo].[_FileInfo] AS [_FileInfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="_NAICListing" EntityType="LPLRStagingModel.Store._NAICListing" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AnnualIndexType" EntityType="LPLRStagingModel.Store.AnnualIndexType" store:Type="Tables" store:Schema="dbo" store:Name="AnnualIndexType">
+            <DefiningQuery>SELECT 
+      [AnnualIndexType].[CovOption_Id] AS [CovOption_Id], 
+      [AnnualIndexType].[AnnualIndexTypeCd] AS [AnnualIndexTypeCd], 
+      [AnnualIndexType].[AnnualIndexType] AS [AnnualIndexType]
+      FROM [dbo].[AnnualIndexType] AS [AnnualIndexType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CarrierAppointment" EntityType="LPLRStagingModel.Store.CarrierAppointment" store:Type="Tables" store:Schema="dbo" store:Name="CarrierAppointment">
+            <DefiningQuery>SELECT 
+      [CarrierAppointment].[CarrierAppointment_Id] AS [CarrierAppointment_Id], 
+      [CarrierAppointment].[Producer_Id] AS [Producer_Id], 
+      [CarrierAppointment].[CompanyProducerID] AS [CompanyProducerID]
+      FROM [dbo].[CarrierAppointment] AS [CarrierAppointment]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Coverage" EntityType="LPLRStagingModel.Store.Coverage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IssueSubType" EntityType="LPLRStagingModel.Store.IssueSubType" store:Type="Tables" store:Schema="dbo" store:Name="IssueSubType">
+            <DefiningQuery>SELECT 
+      [IssueSubType].[Policy_Id] AS [Policy_Id], 
+      [IssueSubType].[IssueSubTypeCd] AS [IssueSubTypeCd], 
+      [IssueSubType].[IssueSubType] AS [IssueSubType]
+      FROM [dbo].[IssueSubType] AS [IssueSubType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="IssueType" EntityType="LPLRStagingModel.Store.IssueType" store:Type="Tables" store:Schema="dbo" store:Name="IssueType">
+            <DefiningQuery>SELECT 
+      [IssueType].[Policy_Id] AS [Policy_Id], 
+      [IssueType].[IssueTypeCd] AS [IssueTypeCd], 
+      [IssueType].[IssueType] AS [IssueType]
+      FROM [dbo].[IssueType] AS [IssueType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="LifeCovOptTypeCode" EntityType="LPLRStagingModel.Store.LifeCovOptTypeCode" store:Type="Tables" store:Schema="dbo" store:Name="LifeCovOptTypeCode">
+            <DefiningQuery>SELECT 
+      [LifeCovOptTypeCode].[CovOption_Id] AS [CovOption_Id], 
+      [LifeCovOptTypeCode].[LifeCovOptTypeCodeCd] AS [LifeCovOptTypeCodeCd], 
+      [LifeCovOptTypeCode].[LifeCovOptTypeCode] AS [LifeCovOptTypeCode]
+      FROM [dbo].[LifeCovOptTypeCode] AS [LifeCovOptTypeCode]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="LifeParticipant" EntityType="LPLRStagingModel.Store.LifeParticipant" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LifeParticipantRoleCode" EntityType="LPLRStagingModel.Store.LifeParticipantRoleCode" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LIMRAProductType" EntityType="LPLRStagingModel.Store.LIMRAProductType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Organizations" EntityType="LPLRStagingModel.Store.Organizations" store:Type="Tables" store:Schema="dbo" store:Name="Organizations">
+            <DefiningQuery>SELECT 
+      [Organizations].[NAICNumber] AS [NAICNumber], 
+      [Organizations].[OnyxId] AS [OnyxId], 
+      [Organizations].[legalName] AS [legalName], 
+      [Organizations].[FleetId] AS [FleetId], 
+      [Organizations].[SurveyId] AS [SurveyId], 
+      [Organizations].[PreferedName] AS [PreferedName], 
+      [Organizations].[ContactName] AS [ContactName], 
+      [Organizations].[OrganizationId] AS [OrganizationId]
+      FROM [dbo].[Organizations] AS [Organizations]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ParticipatingInd" EntityType="LPLRStagingModel.Store.ParticipatingInd" store:Type="Tables" store:Schema="dbo" store:Name="ParticipatingInd">
+            <DefiningQuery>SELECT 
+      [ParticipatingInd].[ParticipatingIndCd] AS [ParticipatingIndCd], 
+      [ParticipatingInd].[ParticipatingInd] AS [ParticipatingInd], 
+      [ParticipatingInd].[Coverage_Id] AS [Coverage_Id]
+      FROM [dbo].[ParticipatingInd] AS [ParticipatingInd]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PaymentMultiplier" EntityType="LPLRStagingModel.Store.PaymentMultiplier" store:Type="Tables" store:Schema="dbo" store:Name="PaymentMultiplier">
+            <DefiningQuery>SELECT 
+      [PaymentMultiplier].[PaymentModeCd] AS [PaymentModeCd], 
+      [PaymentMultiplier].[ModeMultiplier] AS [ModeMultiplier]
+      FROM [dbo].[PaymentMultiplier] AS [PaymentMultiplier]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Policy" EntityType="LPLRStagingModel.Store.Policy" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Relation" EntityType="LPLRStagingModel.Store.Relation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReplacementType" EntityType="LPLRStagingModel.Store.ReplacementType" store:Type="Tables" store:Schema="dbo" store:Name="ReplacementType">
+            <DefiningQuery>SELECT 
+      [ReplacementType].[Policy_Id] AS [Policy_Id], 
+      [ReplacementType].[ReplacementTypeCd] AS [ReplacementTypeCd], 
+      [ReplacementType].[ReplacementType] AS [ReplacementType]
+      FROM [dbo].[ReplacementType] AS [ReplacementType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SurveyPeriods" EntityType="LPLRStagingModel.Store.SurveyPeriods" store:Type="Tables" store:Schema="dbo" store:Name="SurveyPeriods">
+            <DefiningQuery>SELECT 
+      [SurveyPeriods].[PeriodId] AS [PeriodId], 
+      [SurveyPeriods].[StartDate] AS [StartDate], 
+      [SurveyPeriods].[EndDate] AS [EndDate], 
+      [SurveyPeriods].[PeriodYear] AS [PeriodYear], 
+      [SurveyPeriods].[PeriodName] AS [PeriodName]
+      FROM [dbo].[SurveyPeriods] AS [SurveyPeriods]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="sysdiagrams" EntityType="LPLRStagingModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TypeCodes_delete" EntityType="LPLRStagingModel.Store.TypeCodes_delete" store:Type="Tables" store:Schema="dbo" store:Name="TypeCodes_delete">
+            <DefiningQuery>SELECT 
+      [TypeCodes_delete].[PropertyType] AS [PropertyType], 
+      [TypeCodes_delete].[CodeValue] AS [CodeValue], 
+      [TypeCodes_delete].[CodeDescription] AS [CodeDescription], 
+      [TypeCodes_delete].[CodeMnemonic] AS [CodeMnemonic]
+      FROM [dbo].[TypeCodes_delete] AS [TypeCodes_delete]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LPLRStaging.dbo._FileInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="_FileInfo">
+          <Key>
+            <PropertyRef Name="FileId" />
+          </Key>
+          <Property Name="FileId" Type="int" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="255" />
+          <Property Name="NAIC" Type="nchar" MaxLength="5" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="FileNumber" Type="char" MaxLength="2" />
+          <Property Name="LagDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="_NAICListing">
+          <Key>
+            <PropertyRef Name="NAIC" />
+          </Key>
+          <Property Name="NAIC" Type="nchar" Nullable="false" MaxLength="5" />
+          <Property Name="CompanyName" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="BDMonths" Type="smallint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LPLRStaging.dbo.AnnualIndexType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="AnnualIndexType">
+          <Key>
+            <PropertyRef Name="AnnualIndexTypeCd" />
+          </Key>
+          <Property Name="CovOption_Id" Type="bigint" />
+          <Property Name="AnnualIndexTypeCd" Type="bigint" Nullable="false" />
+          <Property Name="AnnualIndexType" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LPLRStaging.dbo.CarrierAppointment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="CarrierAppointment">
+          <Key>
+            <PropertyRef Name="CarrierAppointment_Id" />
+            <PropertyRef Name="Producer_Id" />
+          </Key>
+          <Property Name="CarrierAppointment_Id" Type="bigint" Nullable="false" />
+          <Property Name="Producer_Id" Type="bigint" Nullable="false" />
+          <Property Name="CompanyProducerID" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Coverage">
+          <Key>
+            <PropertyRef Name="Coverage_Id" />
+          </Key>
+          <Property Name="Coverage_Id" Type="int" Nullable="false" />
+          <Property Name="Life_Id" Type="int" Nullable="false" />
+          <Property Name="IncreasedCoverageId" Type="nvarchar" MaxLength="255" />
+          <Property Name="PlanName" Type="nvarchar" MaxLength="255" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="CurrentAmt" Type="decimal" Precision="29" Scale="10" />
+          <Property Name="InitCovAmt" Type="decimal" Precision="29" Scale="10" />
+          <Property Name="MinPremAmt" Type="decimal" Precision="29" Scale="10" />
+          <Property Name="ModalPremAmt" Type="decimal" Precision="29" Scale="10" />
+          <Property Name="EffDate" Type="datetime" />
+          <Property Name="CurrentNumberOfUnits" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="ValuePerUnit" Type="decimal" Precision="29" Scale="10" />
+          <Property Name="TermDate" Type="datetime" />
+          <Property Name="PayToAge" Type="int" />
+          <Property Name="PayToYear" Type="int" />
+          <Property Name="LevelPremiumPeriod" Type="int" />
+          <Property Name="Id" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LPLRStaging.dbo.IssueSubType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="IssueSubType">
+          <Key>
+            <PropertyRef Name="Policy_Id" />
+            <PropertyRef Name="IssueSubTypeCd" />
+          </Key>
+          <Property Name="Policy_Id" Type="bigint" Nullable="false" />
+          <Property Name="IssueSubTypeCd" Type="bigint" Nullable="false" />
+          <Property Name="IssueSubType" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LPLRStaging.dbo.IssueType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="IssueType">
+          <Key>
+            <PropertyRef Name="Policy_Id" />
+            <PropertyRef Name="IssueTypeCd" />
+          </Key>
+          <Property Name="Policy_Id" Type="bigint" Nullable="false" />
+          <Property Name="IssueTypeCd" Type="bigint" Nullable="false" />
+          <Property Name="IssueType" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LPLRStaging.dbo.LifeCovOptTypeCode' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="LifeCovOptTypeCode">
+          <Key>
+            <PropertyRef Name="LifeCovOptTypeCodeCd" />
+          </Key>
+          <Property Name="CovOption_Id" Type="bigint" />
+          <Property Name="LifeCovOptTypeCodeCd" Type="bigint" Nullable="false" />
+          <Property Name="LifeCovOptTypeCode" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LifeParticipant">
+          <Key>
+            <PropertyRef Name="LifeParticipant_Id" />
+          </Key>
+          <Property Name="LifeParticipant_Id" Type="int" Nullable="false" />
+          <Property Name="PartyID" Type="nvarchar" MaxLength="255" />
+          <Property Name="Coverage_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="LifeParticipantRoleCode">
+          <Key>
+            <PropertyRef Name="LifeParticipant_Id" />
+          </Key>
+          <Property Name="LifeParticipant_Id" Type="int" Nullable="false" />
+          <Property Name="LifeParticipantRoleCd" Type="int" />
+          <Property Name="LifeParticipantRole" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LIMRAProductType">
+          <Key>
+            <PropertyRef Name="NAICCode" />
+            <PropertyRef Name="ProductCode" />
+            <PropertyRef Name="ProductTypeCd" />
+          </Key>
+          <Property Name="NAICCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="ProductCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="PlanName" Type="nvarchar" MaxLength="255" />
+          <Property Name="ProductTypeCd" Type="int" Nullable="false" />
+          <Property Name="LIMRAProductType" Type="int" />
+          <Property Name="LIMRAProductTypeDesc" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LPLRStaging.dbo.Organizations' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Organizations">
+          <Key>
+            <PropertyRef Name="NAICNumber" />
+          </Key>
+          <Property Name="NAICNumber" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="OnyxId" Type="nchar" MaxLength="10" />
+          <Property Name="legalName" Type="nchar" MaxLength="100" />
+          <Property Name="FleetId" Type="nchar" MaxLength="10" />
+          <Property Name="SurveyId" Type="nchar" MaxLength="10" />
+          <Property Name="PreferedName" Type="nchar" MaxLength="100" />
+          <Property Name="ContactName" Type="nchar" MaxLength="100" />
+          <Property Name="OrganizationId" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LPLRStaging.dbo.ParticipatingInd' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ParticipatingInd">
+          <Key>
+            <PropertyRef Name="ParticipatingIndCd" />
+            <PropertyRef Name="Coverage_Id" />
+          </Key>
+          <Property Name="ParticipatingIndCd" Type="bigint" Nullable="false" />
+          <Property Name="ParticipatingInd" Type="nvarchar" MaxLength="255" />
+          <Property Name="Coverage_Id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LPLRStaging.dbo.PaymentMultiplier' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="PaymentMultiplier">
+          <Key>
+            <PropertyRef Name="PaymentModeCd" />
+            <PropertyRef Name="ModeMultiplier" />
+          </Key>
+          <Property Name="PaymentModeCd" Type="tinyint" Nullable="false" />
+          <Property Name="ModeMultiplier" Type="decimal" Nullable="false" Precision="13" Scale="5" />
+        </EntityType>
+        <EntityType Name="Policy">
+          <Key>
+            <PropertyRef Name="Policy_Id" />
+          </Key>
+          <Property Name="Policy_Id" Type="bigint" Nullable="false" />
+          <Property Name="Holding_Id" Type="numeric" Precision="20" />
+          <Property Name="PolNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="CarrierCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="PlanName" Type="nvarchar" MaxLength="255" />
+          <Property Name="EffDate" Type="datetime" />
+          <Property Name="IssueDate" Type="datetime" />
+          <Property Name="StatusChangeDate" Type="datetime" />
+          <Property Name="PaymentAmt" Type="decimal" Precision="29" Scale="10" />
+        </EntityType>
+        <EntityType Name="Relation">
+          <Key>
+            <PropertyRef Name="Relation_Id" />
+          </Key>
+          <Property Name="Relation_Id" Type="int" Nullable="false" />
+          <Property Name="id" Type="nvarchar" MaxLength="255" />
+          <Property Name="OLifE_Id" Type="int" />
+          <Property Name="OriginatingObjectID" Type="nvarchar" MaxLength="255" />
+          <Property Name="RelatedObjectID" Type="nvarchar" MaxLength="255" />
+          <Property Name="InterestPercent" Type="decimal" Precision="28" Scale="10" />
+          <Property Name="OriginatingObjectType" Type="tinyint" />
+          <Property Name="RelatedObjectType" Type="smallint" />
+          <Property Name="RelationRoleCode" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LPLRStaging.dbo.ReplacementType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ReplacementType">
+          <Key>
+            <PropertyRef Name="Policy_Id" />
+            <PropertyRef Name="ReplacementTypeCd" />
+          </Key>
+          <Property Name="Policy_Id" Type="bigint" Nullable="false" />
+          <Property Name="ReplacementTypeCd" Type="bigint" Nullable="false" />
+          <Property Name="ReplacementType" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LPLRStaging.dbo.SurveyPeriods' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="SurveyPeriods">
+          <Key>
+            <PropertyRef Name="PeriodId" />
+            <PropertyRef Name="StartDate" />
+            <PropertyRef Name="EndDate" />
+            <PropertyRef Name="PeriodYear" />
+            <PropertyRef Name="PeriodName" />
+          </Key>
+          <Property Name="PeriodId" Type="int" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" Nullable="false" />
+          <Property Name="PeriodYear" Type="nchar" Nullable="false" MaxLength="4" />
+          <Property Name="PeriodName" Type="nchar" Nullable="false" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LPLRStaging.dbo.TypeCodes_delete' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="TypeCodes_delete">
+          <Key>
+            <PropertyRef Name="PropertyType" />
+            <PropertyRef Name="CodeValue" />
+          </Key>
+          <Property Name="PropertyType" Type="nchar" Nullable="false" MaxLength="25" />
+          <Property Name="CodeValue" Type="int" Nullable="false" />
+          <Property Name="CodeDescription" Type="nvarchar" MaxLength="50" />
+          <Property Name="CodeMnemonic" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.BeneficiaryDesignation' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="BeneficiaryDesignation">
+        <Property Name="LifeParticipant_Id" Type="numeric" Precision="20" />
+        <Property Name="BeneficiaryDesignationCd" Type="int" />
+        <Property Name="BeneficiaryDesignation" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.CarrierApptStatus' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="CarrierApptStatus">
+        <Property Name="CarrierApptStatusCd" Type="bigint" />
+        <Property Name="CarrierApptStatus" Type="nvarchar" MaxLength="255" />
+        <Property Name="CarrierAppointment_Id" Type="bigint" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.Case' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Case">
+        <Property Name="Case_Id" Type="numeric" Precision="20" />
+        <Property Name="id" Type="nvarchar" MaxLength="255" />
+        <Property Name="OLifE_Id" Type="numeric" Precision="20" />
+        <Property Name="CaseID" Type="nvarchar" MaxLength="255" />
+        <Property Name="NumHoldings" Type="int" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.CaseType' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="CaseType">
+        <Property Name="Case_Id" Type="numeric" Precision="20" />
+        <Property Name="CaseTypecd" Type="int" />
+        <Property Name="CaseType" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.CovOption' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="CovOption">
+        <Property Name="CovOption_Id" Type="numeric" Precision="20" />
+        <Property Name="Coverage_Id" Type="numeric" Precision="20" />
+        <Property Name="PlanName" Type="nvarchar" MaxLength="255" />
+        <Property Name="ProductCode" Type="nvarchar" MaxLength="255" />
+        <Property Name="ModalPremAmt" Type="decimal" Precision="29" Scale="10" />
+        <Property Name="OptionAmt" Type="decimal" Precision="29" Scale="10" />
+        <Property Name="OptionPct" Type="decimal" Precision="28" Scale="10" />
+        <Property Name="EffDate" Type="datetime" />
+        <Property Name="DurationDesign" Type="int" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.DistributionChannel' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="DistributionChannel">
+        <Property Name="DistributionChannelInfo_Id" Type="numeric" Precision="20" />
+        <Property Name="DistributionChannelInfocd" Type="int" />
+        <Property Name="DistributionChannelInfo" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.DistributionChannelInfo' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="DistributionChannelInfo">
+        <Property Name="DistributionChannelInfo_Id" Type="numeric" Precision="20" />
+        <Property Name="CarrierAppointment_Id" Type="numeric" Precision="20" />
+        <Property Name="DistributionChannelName" Type="nvarchar" MaxLength="255" />
+        <Property Name="DistributionChannelCode" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.DistributionChannelSubType' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="DistributionChannelSubType">
+        <Property Name="DistributionChannelInfo_Id" Type="numeric" Precision="20" />
+        <Property Name="DistributionChannelSubTypeCd" Type="int" />
+        <Property Name="DistributionChannelSubType" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.FinActivitySubType' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="FinActivitySubType">
+        <Property Name="FinActivitySubTypeCd" Type="bigint" />
+        <Property Name="FinActivitySubType" Type="nvarchar" MaxLength="255" />
+        <Property Name="FinancialActivity_Id" Type="bigint" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.FinActivityType' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="FinActivityType">
+        <Property Name="FinancialActivity_Id" Type="numeric" Precision="20" />
+        <Property Name="FinActivityTypecd" Type="numeric" Precision="20" />
+        <Property Name="FinActivityType" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.FinancialActivity' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="FinancialActivity">
+        <Property Name="FinancialActivity_Id" Type="bigint" />
+        <Property Name="FinActivityGrossAmt" Type="decimal" Precision="29" Scale="10" />
+        <Property Name="Policy_Id" Type="bigint" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.Gender' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Gender">
+        <Property Name="Person_Id" Type="numeric" Precision="20" />
+        <Property Name="Gendercd" Type="int" />
+        <Property Name="Gender" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.GovtIDTC' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="GovtIDTC">
+        <Property Name="Party_Id" Type="numeric" Precision="20" />
+        <Property Name="GovtIDTCcd" Type="int" />
+        <Property Name="GovtIDTC" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.Grouping' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Grouping">
+        <Property Name="Grouping_Id" Type="numeric" Precision="20" />
+        <Property Name="Id" Type="nvarchar" MaxLength="255" />
+        <Property Name="OLifE_Id" Type="numeric" Precision="20" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.GroupingTypeCode' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="GroupingTypeCode">
+        <Property Name="Grouping_Id" Type="numeric" Precision="20" />
+        <Property Name="GroupingTypeCd" Type="int" />
+        <Property Name="GroupingType" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.Holding' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Holding">
+        <Property Name="Holding_Id" Type="numeric" Precision="20" />
+        <Property Name="id" Type="nvarchar" MaxLength="255" />
+        <Property Name="OLifE_Id" Type="numeric" Precision="20" />
+        <Property Name="AsOfDate" Type="datetime" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.HoldingStatus' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="HoldingStatus">
+        <Property Name="Holding_Id" Type="numeric" Precision="20" />
+        <Property Name="HoldingStatusCd" Type="int" />
+        <Property Name="HoldingStatus" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.HoldingTypeCode' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="HoldingTypeCode">
+        <Property Name="Holding_Id" Type="numeric" Precision="20" />
+        <Property Name="HoldingTypeCd" Type="int" />
+        <Property Name="HoldingType" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.Household' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Household">
+        <Property Name="Grouping_Id" Type="numeric" Precision="20" />
+        <Property Name="EstIncome" Type="decimal" Precision="29" Scale="10" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.IndicatorCode' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="IndicatorCode">
+        <Property Name="Coverage_Id" Type="numeric" Precision="20" />
+        <Property Name="IndicatorCd" Type="int" />
+        <Property Name="IndicatorCdDesc" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.InquiryLevel' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="InquiryLevel">
+        <Property Name="TXLifeRequest_Id" Type="numeric" Precision="20" />
+        <Property Name="InquiryLevelCd" Type="int" />
+        <Property Name="InquiryLevel" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.IssueNation' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="IssueNation">
+        <Property Name="Policy_Id" Type="numeric" Precision="20" />
+        <Property Name="IssueNationCd" Type="int" />
+        <Property Name="IssueNation" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.Jurisdiction' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Jurisdiction">
+        <Property Name="Policy_Id" Type="numeric" Precision="20" />
+        <Property Name="JurisdictionCd" Type="int" />
+        <Property Name="Jurisdiction" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.LevelPremiumPeriodUnits' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="LevelPremiumPeriodUnits">
+        <Property Name="Coverage_Id" Type="numeric" Precision="20" />
+        <Property Name="LevelPremiumPeriodUnitsCd" Type="int" />
+        <Property Name="LevelPremiumPeriodUnits" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.Life' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Life">
+        <Property Name="Life_Id" Type="numeric" Precision="20" />
+        <Property Name="Policy_Id" Type="numeric" Precision="20" />
+        <Property Name="TargetPremAmt" Type="decimal" Precision="29" Scale="10" />
+        <Property Name="CumPremAmtFirstYr" Type="decimal" Precision="29" Scale="10" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.LifeCovTypeCode' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="LifeCovTypeCode">
+        <Property Name="Coverage_Id" Type="numeric" Precision="20" />
+        <Property Name="LifeCovTypeCodeCd" Type="int" />
+        <Property Name="LifeCovTypeCode" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.LineofBusiness' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="LineofBusiness">
+        <Property Name="Policy_Id" Type="numeric" Precision="20" />
+        <Property Name="LineofBusinessCd" Type="int" />
+        <Property Name="LineofBusiness" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.LivesType' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="LivesType">
+        <Property Name="Coverage_Id" Type="numeric" Precision="20" />
+        <Property Name="LivesTypeCd" Type="int" />
+        <Property Name="LivesType" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.MarStat' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="MarStat">
+        <Property Name="Person_Id" Type="numeric" Precision="20" />
+        <Property Name="MarStatCd" Type="int" />
+        <Property Name="MarStat" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.NatureCategory' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="NatureCategory">
+        <Property Name="Organization_Id" Type="numeric" Precision="20" />
+        <Property Name="NatureCategoryCd" Type="int" />
+        <Property Name="NatureCategory" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.NoResponseOK' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="NoResponseOK">
+        <Property Name="TXLifeRequest_Id" Type="numeric" Precision="20" />
+        <Property Name="NoResponseOKCd" Type="int" />
+        <Property Name="NoResponseOK" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.OLife' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="OLife">
+        <Property Name="OLifE_Id" Type="numeric" Precision="20" />
+        <Property Name="TXLifeRequest_Id" Type="numeric" Precision="20" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.Organization' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Organization">
+        <Property Name="Organization_Id" Type="numeric" Precision="20" />
+        <Property Name="Party_Id" Type="numeric" Precision="20" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.OrgForm' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="OrgForm">
+        <Property Name="Organization_Id" Type="numeric" Precision="20" />
+        <Property Name="OrgFormCd" Type="int" />
+        <Property Name="OrgForm" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.OriginatingObjectType' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="OriginatingObjectType">
+        <Property Name="Relation_Id" Type="numeric" Precision="20" />
+        <Property Name="OriginatingObjectTypecd" Type="int" />
+        <Property Name="OriginatingObjectType" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.Party' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Party">
+        <Property Name="Party_Id" Type="numeric" Precision="20" />
+        <Property Name="id" Type="nvarchar" MaxLength="255" />
+        <Property Name="OLifE_Id" Type="numeric" Precision="20" />
+        <Property Name="PartyKey" Type="nvarchar" MaxLength="255" />
+        <Property Name="FullName" Type="nvarchar" MaxLength="255" />
+        <Property Name="GovtID" Type="nvarchar" MaxLength="255" />
+        <Property Name="ResidenceZip" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.PartyTypeCode' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="PartyTypeCode">
+        <Property Name="Party_Id" Type="numeric" Precision="20" />
+        <Property Name="PartyTypeCd" Type="int" />
+        <Property Name="PartyType" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.PaymentMethod' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="PaymentMethod">
+        <Property Name="Policy_Id" Type="numeric" Precision="20" />
+        <Property Name="PaymentMethodCd" Type="int" />
+        <Property Name="PaymentMethod" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.PaymentMode' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="PaymentMode">
+        <Property Name="Policy_Id" Type="numeric" Precision="20" />
+        <Property Name="PaymentModeCd" Type="int" />
+        <Property Name="PaymentMode" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.PendingResponseOK' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="PendingResponseOK">
+        <Property Name="TXLifeRequest_Id" Type="numeric" Precision="20" />
+        <Property Name="PendingResponseOKCd" Type="int" />
+        <Property Name="PendingResponseOK" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.Person' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Person">
+        <Property Name="Person_Id" Type="numeric" Precision="20" />
+        <Property Name="Party_Id" Type="numeric" Precision="20" />
+        <Property Name="BirthDate" Type="datetime" />
+        <Property Name="Age" Type="int" />
+        <Property Name="EstSalary" Type="decimal" Precision="29" Scale="10" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.PolicyStatus' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="PolicyStatus">
+        <Property Name="Policy_Id" Type="numeric" Precision="20" />
+        <Property Name="PolicyStatusCd" Type="int" />
+        <Property Name="PolicyStatus" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.PrimaryObjectType' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="PrimaryObjectType">
+        <Property Name="PrimaryObjectTypeCd" Type="bigint" />
+        <Property Name="PrimaryObjectType" Type="nvarchar" MaxLength="255" />
+        <Property Name="TXLifeRequest_Id" Type="bigint" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.Producer' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Producer">
+        <Property Name="Producer_Id" Type="numeric" Precision="20" />
+        <Property Name="Party_Id" Type="numeric" Precision="20" />
+        <Property Name="NIPRNumber" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.ProductType' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="ProductType">
+        <Property Name="Policy_Id" Type="numeric" Precision="20" />
+        <Property Name="ProductTypeCd" Type="int" />
+        <Property Name="ProductType" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.Purpose' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Purpose">
+        <Property Name="Holding_Id" Type="numeric" Precision="20" />
+        <Property Name="PurposeCd" Type="int" />
+        <Property Name="Purpose" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.QualPlanType' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="QualPlanType">
+        <Property Name="Life_Id" Type="numeric" Precision="20" />
+        <Property Name="QualPlanTypeCd" Type="int" />
+        <Property Name="QualPlanType" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.RelatedObjectType' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="RelatedObjectType">
+        <Property Name="Relation_Id" Type="numeric" Precision="20" />
+        <Property Name="RelatedObjectTypeCd" Type="int" />
+        <Property Name="RelatedObjectType" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.RelationRoleCode' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="RelationRoleCode">
+        <Property Name="Relation_Id" Type="numeric" Precision="20" />
+        <Property Name="RelationRoleCd" Type="int" />
+        <Property Name="RelationRole" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.ResidenceCountry' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="ResidenceCountry">
+        <Property Name="Party_Id" Type="numeric" Precision="20" />
+        <Property Name="ResidenceCountryCd" Type="int" />
+        <Property Name="ResidenceCountry" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.ResidenceState' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="ResidenceState">
+        <Property Name="Party_Id" Type="numeric" Precision="20" />
+        <Property Name="ResidenceStateCd" Type="int" />
+        <Property Name="ResidenceState" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.ReversalInd' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="ReversalInd">
+        <Property Name="ReversalIndCd" Type="bigint" />
+        <Property Name="ReversalInd" Type="nvarchar" MaxLength="255" />
+        <Property Name="FinancialActivity_Id" Type="bigint" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.SourceInfo' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="SourceInfo">
+        <Property Name="OLife_Id" Type="numeric" Precision="20" />
+        <Property Name="CreationDate" Type="datetime" />
+        <Property Name="CreationTime" Type="nvarchar" MaxLength="255" />
+        <Property Name="SourceInfoName" Type="nvarchar" MaxLength="255" />
+        <Property Name="SourceInfoDescription" Type="nvarchar" MaxLength="255" />
+        <Property Name="SourceInfoComment" Type="nvarchar" MaxLength="255" />
+        <Property Name="FileControlId" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.TestIndicator' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="TestIndicator">
+        <Property Name="TXLifeRequest_Id" Type="numeric" Precision="20" />
+        <Property Name="TestIndicatorCd" Type="int" />
+        <Property Name="TestIndicator" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.TobaccoPremiumBasis' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="TobaccoPremiumBasis">
+        <Property Name="LifeParticipant_Id" Type="numeric" Precision="20" />
+        <Property Name="TobaccoPremiumBasisCd" Type="int" />
+        <Property Name="TobaccoPremiumBasis" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.TransMode' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="TransMode">
+        <Property Name="TXLifeRequest_Id" Type="numeric" Precision="20" />
+        <Property Name="TransModeCd" Type="int" />
+        <Property Name="TransMode" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.TransSubType' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="TransSubType">
+        <Property Name="TXLifeRequest_Id" Type="numeric" Precision="20" />
+        <Property Name="TransSubTypeCd" Type="int" />
+        <Property Name="TransSubType" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.TransType' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="TransType">
+        <Property Name="TXLifeRequest_Id" Type="numeric" Precision="20" />
+        <Property Name="TransTypeCd" Type="int" />
+        <Property Name="TransType" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.TXLife' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="TXLife">
+        <Property Name="Version" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.TxLifeRequest' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="TxLifeRequest">
+        <Property Name="TXLifeRequest_Id" Type="numeric" Precision="20" />
+        <Property Name="PrimaryObjectId" Type="nvarchar" MaxLength="255" />
+        <Property Name="Id" Type="nvarchar" MaxLength="255" />
+        <Property Name="TransRefGUID" Type="nvarchar" MaxLength="255" />
+        <Property Name="TransExeDate" Type="datetime" />
+        <Property Name="TransExeTime" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.UnderwritingClass' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="UnderwritingClass">
+        <Property Name="LifeParticipant_Id" Type="numeric" Precision="20" />
+        <Property Name="UnderwritingClassCd" Type="int" />
+        <Property Name="UnderwritingClass" Type="nvarchar" MaxLength="255" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'LPLRStaging.dbo.UnderwritingSubClass' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="UnderwritingSubClass">
+        <Property Name="LifeParticipant_Id" Type="numeric" Precision="20" />
+        <Property Name="UnderwritingSubClassCd" Type="int" />
+        <Property Name="UnderwritingSubClass" Type="nvarchar" MaxLength="255" />
+      </EntityType>-->
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LPLRStagingModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="LPLRStagingEntities">
+          <EntitySet Name="C_FileInfo" EntityType="LPLRStagingModel.C_FileInfo" />
+          <EntitySet Name="C_NAICListing" EntityType="LPLRStagingModel.C_NAICListing" />
+          <EntitySet Name="LifeParticipants" EntityType="LPLRStagingModel.LifeParticipant" />
+          <EntitySet Name="LifeParticipantRoleCodes" EntityType="LPLRStagingModel.LifeParticipantRoleCode" />
+          <EntitySet Name="Organizations" EntityType="LPLRStagingModel.Organization" />
+          <EntitySet Name="PaymentMultipliers" EntityType="LPLRStagingModel.PaymentMultiplier" />
+          <EntitySet Name="Relations" EntityType="LPLRStagingModel.Relation" />
+          <EntitySet Name="SurveyPeriods" EntityType="LPLRStagingModel.SurveyPeriod" />
+          <EntitySet Name="sysdiagrams" EntityType="LPLRStagingModel.sysdiagram" />
+          <EntitySet Name="AnnualIndexType" EntityType="LPLRStagingModel.AnnualIndexType" />
+          <EntitySet Name="CarrierAppointment" EntityType="LPLRStagingModel.CarrierAppointment" />
+          <EntitySet Name="IssueSubType" EntityType="LPLRStagingModel.IssueSubType" />
+          <EntitySet Name="IssueType" EntityType="LPLRStagingModel.IssueType" />
+          <EntitySet Name="LifeCovOptTypeCode" EntityType="LPLRStagingModel.LifeCovOptTypeCode" />
+          <EntitySet Name="ParticipatingInd" EntityType="LPLRStagingModel.ParticipatingInd" />
+          <EntitySet Name="Policy" EntityType="LPLRStagingModel.Policy" />
+          <EntitySet Name="ReplacementType" EntityType="LPLRStagingModel.ReplacementType" />
+          <EntitySet Name="Coverage" EntityType="LPLRStagingModel.Coverage" />
+          <EntitySet Name="TypeCodes_delete" EntityType="LPLRStagingModel.TypeCodes_delete" />
+          <EntitySet Name="LIMRAProductTypes" EntityType="LPLRStagingModel.LIMRAProductType" />
+        </EntityContainer>
+        <EntityType Name="C_FileInfo">
+          <Key>
+            <PropertyRef Name="FileId" />
+          </Key>
+          <Property Name="FileId" Type="Int32" Nullable="false" />
+          <Property Name="FileName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="NAIC" Type="String" MaxLength="5" Unicode="true" FixedLength="true" />
+          <Property Name="StartDate" Type="DateTime" />
+          <Property Name="EndDate" Type="DateTime" />
+          <Property Name="FileNumber" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="LagDate" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="C_NAICListing">
+          <Key>
+            <PropertyRef Name="NAIC" />
+          </Key>
+          <Property Name="NAIC" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="true" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Type="Int16" Name="BDMonths" />
+        </EntityType>
+        <EntityType Name="LifeParticipant">
+          <Key>
+            <PropertyRef Name="LifeParticipant_Id" />
+          </Key>
+          <Property Name="LifeParticipant_Id" Type="Int32" Nullable="false" />
+          <Property Name="PartyID" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Coverage_Id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LifeParticipantRoleCode">
+          <Key>
+            <PropertyRef Name="LifeParticipant_Id" />
+          </Key>
+          <Property Name="LifeParticipant_Id" Type="Int32" Nullable="false" />
+          <Property Name="LifeParticipantRoleCd" Type="Int32" />
+          <Property Name="LifeParticipantRole" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Organization">
+          <Key>
+            <PropertyRef Name="NAICNumber" />
+          </Key>
+          <Property Name="NAICNumber" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="OnyxId" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="legalName" Type="String" MaxLength="100" Unicode="true" FixedLength="true" />
+          <Property Name="FleetId" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="SurveyId" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="PreferedName" Type="String" MaxLength="100" Unicode="true" FixedLength="true" />
+          <Property Name="ContactName" Type="String" MaxLength="100" Unicode="true" FixedLength="true" />
+          <Property Name="OrganizationId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PaymentMultiplier">
+          <Key>
+            <PropertyRef Name="PaymentModeCd" />
+            <PropertyRef Name="ModeMultiplier" />
+          </Key>
+          <Property Name="PaymentModeCd" Type="Byte" Nullable="false" />
+          <Property Name="ModeMultiplier" Type="Decimal" Nullable="false" Precision="13" Scale="5" />
+        </EntityType>
+        <EntityType Name="Relation">
+          <Key>
+            <PropertyRef Name="Relation_Id" />
+          </Key>
+          <Property Name="Relation_Id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="OLifE_Id" Type="Int32" />
+          <Property Name="OriginatingObjectID" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="RelatedObjectID" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="InterestPercent" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="OriginatingObjectType" Type="Byte" />
+          <Property Name="RelatedObjectType" Type="Int16" />
+          <Property Name="RelationRoleCode" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SurveyPeriod">
+          <Key>
+            <PropertyRef Name="PeriodId" />
+            <PropertyRef Name="StartDate" />
+            <PropertyRef Name="EndDate" />
+            <PropertyRef Name="PeriodYear" />
+            <PropertyRef Name="PeriodName" />
+          </Key>
+          <Property Name="PeriodId" Type="Int32" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" />
+          <Property Name="PeriodYear" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="true" />
+          <Property Name="PeriodName" Type="String" Nullable="false" MaxLength="3" Unicode="true" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="AnnualIndexType">
+          <Key>
+            <PropertyRef Name="AnnualIndexTypeCd" />
+          </Key>
+          <Property Type="Int64" Name="CovOption_Id" />
+          <Property Type="Int64" Name="AnnualIndexTypeCd" Nullable="false" />
+          <Property Type="String" Name="AnnualIndexType1" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CarrierAppointment">
+          <Key>
+            <PropertyRef Name="CarrierAppointment_Id" />
+            <PropertyRef Name="Producer_Id" />
+          </Key>
+          <Property Type="Int64" Name="CarrierAppointment_Id" Nullable="false" />
+          <Property Type="Int64" Name="Producer_Id" Nullable="false" />
+          <Property Type="String" Name="CompanyProducerID" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="IssueSubType">
+          <Key>
+            <PropertyRef Name="Policy_Id" />
+            <PropertyRef Name="IssueSubTypeCd" />
+          </Key>
+          <Property Type="Int64" Name="Policy_Id" Nullable="false" />
+          <Property Type="Int64" Name="IssueSubTypeCd" Nullable="false" />
+          <Property Type="String" Name="IssueSubType1" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="IssueType">
+          <Key>
+            <PropertyRef Name="Policy_Id" />
+            <PropertyRef Name="IssueTypeCd" />
+          </Key>
+          <Property Type="Int64" Name="Policy_Id" Nullable="false" />
+          <Property Type="Int64" Name="IssueTypeCd" Nullable="false" />
+          <Property Type="String" Name="IssueType1" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LifeCovOptTypeCode">
+          <Key>
+            <PropertyRef Name="LifeCovOptTypeCodeCd" />
+          </Key>
+          <Property Type="Int64" Name="CovOption_Id" />
+          <Property Type="Int64" Name="LifeCovOptTypeCodeCd" Nullable="false" />
+          <Property Type="String" Name="LifeCovOptTypeCode1" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ParticipatingInd">
+          <Key>
+            <PropertyRef Name="ParticipatingIndCd" />
+            <PropertyRef Name="Coverage_Id" />
+          </Key>
+          <Property Type="Int64" Name="ParticipatingIndCd" Nullable="false" />
+          <Property Type="String" Name="ParticipatingInd1" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Coverage_Id" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Policy">
+          <Key>
+            <PropertyRef Name="Policy_Id" />
+          </Key>
+          <Property Type="Int64" Name="Policy_Id" Nullable="false" />
+          <Property Type="Decimal" Name="Holding_Id" Precision="20" Scale="0" />
+          <Property Type="String" Name="PolNumber" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProductCode" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CarrierCode" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PlanName" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="EffDate" />
+          <Property Type="DateTime" Name="IssueDate" />
+          <Property Type="DateTime" Name="StatusChangeDate" />
+          <Property Type="Decimal" Name="PaymentAmt" Precision="29" Scale="10" />
+        </EntityType>
+        <EntityType Name="ReplacementType">
+          <Key>
+            <PropertyRef Name="Policy_Id" />
+            <PropertyRef Name="ReplacementTypeCd" />
+          </Key>
+          <Property Type="Int64" Name="Policy_Id" Nullable="false" />
+          <Property Type="Int64" Name="ReplacementTypeCd" Nullable="false" />
+          <Property Type="String" Name="ReplacementType1" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Coverage">
+          <Key>
+            <PropertyRef Name="Coverage_Id" />
+          </Key>
+          <Property Type="Int32" Name="Coverage_Id" Nullable="false" />
+          <Property Type="Int32" Name="Life_Id" Nullable="false" />
+          <Property Type="String" Name="IncreasedCoverageId" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PlanName" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProductCode" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="CurrentAmt" Precision="29" Scale="10" />
+          <Property Type="Decimal" Name="InitCovAmt" Precision="29" Scale="10" />
+          <Property Type="Decimal" Name="MinPremAmt" Precision="29" Scale="10" />
+          <Property Type="Decimal" Name="ModalPremAmt" Precision="29" Scale="10" />
+          <Property Type="DateTime" Name="EffDate" />
+          <Property Type="Decimal" Name="CurrentNumberOfUnits" Precision="28" Scale="10" />
+          <Property Type="Decimal" Name="ValuePerUnit" Precision="29" Scale="10" />
+          <Property Type="DateTime" Name="TermDate" />
+          <Property Type="Int32" Name="PayToAge" />
+          <Property Type="Int32" Name="PayToYear" />
+          <Property Type="Int32" Name="LevelPremiumPeriod" />
+          <Property Type="String" Name="Id" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TypeCodes_delete">
+          <Key>
+            <PropertyRef Name="PropertyType" />
+            <PropertyRef Name="CodeValue" />
+          </Key>
+          <Property Type="String" Name="PropertyType" Nullable="false" MaxLength="25" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="CodeValue" Nullable="false" />
+          <Property Type="String" Name="CodeDescription" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CodeMnemonic" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LIMRAProductType">
+          <Key>
+            <PropertyRef Name="NAICCode" />
+            <PropertyRef Name="ProductCode" />
+            <PropertyRef Name="ProductTypeCd" />
+          </Key>
+          <Property Type="String" Name="NAICCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProductCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PlanName" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ProductTypeCd" Nullable="false" />
+          <Property Type="Int32" Name="LIMRAProductType1" />
+          <Property Type="String" Name="LIMRAProductTypeDesc" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="LPLRStagingModelStoreContainer" CdmEntityContainer="LPLRStagingEntities">
+          <EntitySetMapping Name="C_FileInfo"><EntityTypeMapping TypeName="LPLRStagingModel.C_FileInfo"><MappingFragment StoreEntitySet="_FileInfo">
+            <ScalarProperty Name="FileId" ColumnName="FileId" />
+            <ScalarProperty Name="FileName" ColumnName="FileName" />
+            <ScalarProperty Name="NAIC" ColumnName="NAIC" />
+            <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+            <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+            <ScalarProperty Name="FileNumber" ColumnName="FileNumber" />
+            <ScalarProperty Name="LagDate" ColumnName="LagDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="C_NAICListing"><EntityTypeMapping TypeName="LPLRStagingModel.C_NAICListing"><MappingFragment StoreEntitySet="_NAICListing">
+            <ScalarProperty Name="BDMonths" ColumnName="BDMonths" />
+                <ScalarProperty Name="NAIC" ColumnName="NAIC" />
+            <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="LifeParticipants"><EntityTypeMapping TypeName="LPLRStagingModel.LifeParticipant"><MappingFragment StoreEntitySet="LifeParticipant">
+            <ScalarProperty Name="LifeParticipant_Id" ColumnName="LifeParticipant_Id" />
+            <ScalarProperty Name="PartyID" ColumnName="PartyID" />
+            <ScalarProperty Name="Coverage_Id" ColumnName="Coverage_Id" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="LifeParticipantRoleCodes"><EntityTypeMapping TypeName="LPLRStagingModel.LifeParticipantRoleCode"><MappingFragment StoreEntitySet="LifeParticipantRoleCode">
+            <ScalarProperty Name="LifeParticipant_Id" ColumnName="LifeParticipant_Id" />
+            <ScalarProperty Name="LifeParticipantRoleCd" ColumnName="LifeParticipantRoleCd" />
+            <ScalarProperty Name="LifeParticipantRole" ColumnName="LifeParticipantRole" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Organizations"><EntityTypeMapping TypeName="LPLRStagingModel.Organization"><MappingFragment StoreEntitySet="Organizations">
+            <ScalarProperty Name="NAICNumber" ColumnName="NAICNumber" />
+            <ScalarProperty Name="OnyxId" ColumnName="OnyxId" />
+            <ScalarProperty Name="legalName" ColumnName="legalName" />
+            <ScalarProperty Name="FleetId" ColumnName="FleetId" />
+            <ScalarProperty Name="SurveyId" ColumnName="SurveyId" />
+            <ScalarProperty Name="PreferedName" ColumnName="PreferedName" />
+            <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+            <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="PaymentMultipliers"><EntityTypeMapping TypeName="LPLRStagingModel.PaymentMultiplier"><MappingFragment StoreEntitySet="PaymentMultiplier">
+            <ScalarProperty Name="PaymentModeCd" ColumnName="PaymentModeCd" />
+            <ScalarProperty Name="ModeMultiplier" ColumnName="ModeMultiplier" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Relations"><EntityTypeMapping TypeName="LPLRStagingModel.Relation"><MappingFragment StoreEntitySet="Relation">
+            <ScalarProperty Name="Relation_Id" ColumnName="Relation_Id" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="OLifE_Id" ColumnName="OLifE_Id" />
+            <ScalarProperty Name="OriginatingObjectID" ColumnName="OriginatingObjectID" />
+            <ScalarProperty Name="RelatedObjectID" ColumnName="RelatedObjectID" />
+            <ScalarProperty Name="InterestPercent" ColumnName="InterestPercent" />
+            <ScalarProperty Name="OriginatingObjectType" ColumnName="OriginatingObjectType" />
+            <ScalarProperty Name="RelatedObjectType" ColumnName="RelatedObjectType" />
+            <ScalarProperty Name="RelationRoleCode" ColumnName="RelationRoleCode" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SurveyPeriods"><EntityTypeMapping TypeName="LPLRStagingModel.SurveyPeriod"><MappingFragment StoreEntitySet="SurveyPeriods">
+            <ScalarProperty Name="PeriodId" ColumnName="PeriodId" />
+            <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+            <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+            <ScalarProperty Name="PeriodYear" ColumnName="PeriodYear" />
+            <ScalarProperty Name="PeriodName" ColumnName="PeriodName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams"><EntityTypeMapping TypeName="LPLRStagingModel.sysdiagram"><MappingFragment StoreEntitySet="sysdiagrams">
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+            <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+            <ScalarProperty Name="version" ColumnName="version" />
+            <ScalarProperty Name="definition" ColumnName="definition" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="AnnualIndexType">
+            <EntityTypeMapping TypeName="LPLRStagingModel.AnnualIndexType">
+              <MappingFragment StoreEntitySet="AnnualIndexType">
+                <ScalarProperty Name="AnnualIndexType1" ColumnName="AnnualIndexType" />
+                <ScalarProperty Name="AnnualIndexTypeCd" ColumnName="AnnualIndexTypeCd" />
+                <ScalarProperty Name="CovOption_Id" ColumnName="CovOption_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CarrierAppointment">
+            <EntityTypeMapping TypeName="LPLRStagingModel.CarrierAppointment">
+              <MappingFragment StoreEntitySet="CarrierAppointment">
+                <ScalarProperty Name="CompanyProducerID" ColumnName="CompanyProducerID" />
+                <ScalarProperty Name="Producer_Id" ColumnName="Producer_Id" />
+                <ScalarProperty Name="CarrierAppointment_Id" ColumnName="CarrierAppointment_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IssueSubType">
+            <EntityTypeMapping TypeName="LPLRStagingModel.IssueSubType">
+              <MappingFragment StoreEntitySet="IssueSubType">
+                <ScalarProperty Name="IssueSubType1" ColumnName="IssueSubType" />
+                <ScalarProperty Name="IssueSubTypeCd" ColumnName="IssueSubTypeCd" />
+                <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IssueType">
+            <EntityTypeMapping TypeName="LPLRStagingModel.IssueType">
+              <MappingFragment StoreEntitySet="IssueType">
+                <ScalarProperty Name="IssueType1" ColumnName="IssueType" />
+                <ScalarProperty Name="IssueTypeCd" ColumnName="IssueTypeCd" />
+                <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LifeCovOptTypeCode">
+            <EntityTypeMapping TypeName="LPLRStagingModel.LifeCovOptTypeCode">
+              <MappingFragment StoreEntitySet="LifeCovOptTypeCode">
+                <ScalarProperty Name="LifeCovOptTypeCode1" ColumnName="LifeCovOptTypeCode" />
+                <ScalarProperty Name="LifeCovOptTypeCodeCd" ColumnName="LifeCovOptTypeCodeCd" />
+                <ScalarProperty Name="CovOption_Id" ColumnName="CovOption_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ParticipatingInd">
+            <EntityTypeMapping TypeName="LPLRStagingModel.ParticipatingInd">
+              <MappingFragment StoreEntitySet="ParticipatingInd">
+                <ScalarProperty Name="Coverage_Id" ColumnName="Coverage_Id" />
+                <ScalarProperty Name="ParticipatingInd1" ColumnName="ParticipatingInd" />
+                <ScalarProperty Name="ParticipatingIndCd" ColumnName="ParticipatingIndCd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Policy">
+            <EntityTypeMapping TypeName="LPLRStagingModel.Policy">
+              <MappingFragment StoreEntitySet="Policy">
+                <ScalarProperty Name="PaymentAmt" ColumnName="PaymentAmt" />
+                <ScalarProperty Name="StatusChangeDate" ColumnName="StatusChangeDate" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="EffDate" ColumnName="EffDate" />
+                <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+                <ScalarProperty Name="CarrierCode" ColumnName="CarrierCode" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="PolNumber" ColumnName="PolNumber" />
+                <ScalarProperty Name="Holding_Id" ColumnName="Holding_Id" />
+                <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReplacementType">
+            <EntityTypeMapping TypeName="LPLRStagingModel.ReplacementType">
+              <MappingFragment StoreEntitySet="ReplacementType">
+                <ScalarProperty Name="ReplacementType1" ColumnName="ReplacementType" />
+                <ScalarProperty Name="ReplacementTypeCd" ColumnName="ReplacementTypeCd" />
+                <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Coverage">
+            <EntityTypeMapping TypeName="LPLRStagingModel.Coverage">
+              <MappingFragment StoreEntitySet="Coverage">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LevelPremiumPeriod" ColumnName="LevelPremiumPeriod" />
+                <ScalarProperty Name="PayToYear" ColumnName="PayToYear" />
+                <ScalarProperty Name="PayToAge" ColumnName="PayToAge" />
+                <ScalarProperty Name="TermDate" ColumnName="TermDate" />
+                <ScalarProperty Name="ValuePerUnit" ColumnName="ValuePerUnit" />
+                <ScalarProperty Name="CurrentNumberOfUnits" ColumnName="CurrentNumberOfUnits" />
+                <ScalarProperty Name="EffDate" ColumnName="EffDate" />
+                <ScalarProperty Name="ModalPremAmt" ColumnName="ModalPremAmt" />
+                <ScalarProperty Name="MinPremAmt" ColumnName="MinPremAmt" />
+                <ScalarProperty Name="InitCovAmt" ColumnName="InitCovAmt" />
+                <ScalarProperty Name="CurrentAmt" ColumnName="CurrentAmt" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+                <ScalarProperty Name="IncreasedCoverageId" ColumnName="IncreasedCoverageId" />
+                <ScalarProperty Name="Life_Id" ColumnName="Life_Id" />
+                <ScalarProperty Name="Coverage_Id" ColumnName="Coverage_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeCodes_delete">
+            <EntityTypeMapping TypeName="LPLRStagingModel.TypeCodes_delete">
+              <MappingFragment StoreEntitySet="TypeCodes_delete">
+                <ScalarProperty Name="CodeMnemonic" ColumnName="CodeMnemonic" />
+                <ScalarProperty Name="CodeDescription" ColumnName="CodeDescription" />
+                <ScalarProperty Name="CodeValue" ColumnName="CodeValue" />
+                <ScalarProperty Name="PropertyType" ColumnName="PropertyType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LIMRAProductTypes">
+            <EntityTypeMapping TypeName="LPLRStagingModel.LIMRAProductType">
+              <MappingFragment StoreEntitySet="LIMRAProductType">
+                <ScalarProperty Name="LIMRAProductTypeDesc" ColumnName="LIMRAProductTypeDesc" />
+                <ScalarProperty Name="LIMRAProductType1" ColumnName="LIMRAProductType" />
+                <ScalarProperty Name="ProductTypeCd" ColumnName="ProductTypeCd" />
+                <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="NAICCode" ColumnName="NAICCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="LPLRStaging" ZoomLevel="100" ShowGrid="true">
+        <EntityTypeShape EntityType="LPLRStagingModel.C_FileInfo" Width="1.5" PointX="0.75" PointY="0.75" Height="2.3648893229166665" IsExpanded="true" />
+        <EntityTypeShape EntityType="LPLRStagingModel.C_NAICListing" Width="1.5" PointX="2.75" PointY="0.75" Height="1.4033821614583335" IsExpanded="true" />
+        <EntityTypeShape EntityType="LPLRStagingModel.LifeParticipant" Width="1.5" PointX="4.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LPLRStagingModel.LifeParticipantRoleCode" Width="1.5" PointX="4.75" PointY="3.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LPLRStagingModel.Organization" Width="1.5" PointX="6.75" PointY="3.75" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="LPLRStagingModel.PaymentMultiplier" Width="1.5" PointX="4.75" PointY="7.75" Height="1.4033821614583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="LPLRStagingModel.Relation" Width="1.5" PointX="6.75" PointY="7.75" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LPLRStagingModel.SurveyPeriod" Width="1.5" PointX="8.75" PointY="0.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="LPLRStagingModel.sysdiagram" Width="1.5" PointX="8.75" PointY="3.75" Height="1.9802864583333353" IsExpanded="true" />
+        <EntityTypeShape EntityType="LPLRStagingModel.AnnualIndexType" Width="1.5" PointX="0.75" PointY="9.75" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="LPLRStagingModel.CarrierAppointment" Width="1.5" PointX="9.75" PointY="9.75" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="LPLRStagingModel.IssueSubType" Width="1.5" PointX="2.75" PointY="10.75" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="LPLRStagingModel.IssueType" Width="1.5" PointX="11.75" PointY="0.75" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="LPLRStagingModel.LifeCovOptTypeCode" Width="1.5" PointX="11.75" PointY="3.75" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="LPLRStagingModel.ParticipatingInd" Width="1.5" PointX="4.75" PointY="11.75" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="LPLRStagingModel.Policy" Width="1.5" PointX="11.75" PointY="6.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="LPLRStagingModel.ReplacementType" Width="1.5" PointX="6.75" PointY="11.75" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="LPLRStagingModel.Coverage" Width="1.5" PointX="9.75" PointY="12.75" Height="4.2879036458333282" />
+        <EntityTypeShape EntityType="LPLRStagingModel.TypeCodes_delete" Width="1.5" PointX="12.75" PointY="10.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="LPLRStagingModel.LIMRAProductType" Width="1.5" PointX="0.75" PointY="4.75" Height="2.1725878906250102" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
