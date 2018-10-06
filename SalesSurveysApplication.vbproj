@@ -1,0 +1,2696 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7761C624-F6AA-4980-BAD9-F8650DF7672B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SalesSurveysApplication</RootNamespace>
+    <AssemblyName>SalesSurveysApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>SalesSurveysApplication.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>SalesSurveysApplication.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Excel.v9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime.v9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="SpreadsheetGear, Version=6.0.3.190, Culture=neutral, PublicKeyToken=39c186f5904944ec, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.Web.UI, Version=2014.2.724.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\RCAJAX\2014.2.724.40\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins, Version=2014.2.724.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\RCAJAX\2014.2.724.40\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\SpreadsheetGear.dll" />
+    <Content Include="bin\SpreadsheetGear.xml" />
+    <Content Include="bin\Telerik.Web.UI.dll" />
+    <Content Include="bin\Telerik.Web.UI.Skins.dll" />
+    <Content Include="bin\Telerik.Web.UI.xml" />
+    <Content Include="Sandbox\AjaxLoadingImageTest.aspx" />
+    <Content Include="Sandbox\checkboxvalue.aspx" />
+    <Content Include="Sandbox\importtest.aspx" />
+    <Content Include="usercontrols\CreateFactTablesII.ascx" />
+    <Content Include="usercontrols\UpdateMORAllPages.ascx" />
+    <Content Include="usercontrols\WorkflowBatchProcess.ascx" />
+    <Content Include="Utilities\IDLookups.aspx" />
+    <Content Include="Workflow\LPLR\Reports\SSASReconciliation.aspx" />
+    <Content Include="Workflow\Survey10\Collection\BatchProcess.aspx" />
+    <Content Include="Workflow\Survey10\Collection\Format.aspx" />
+    <Content Include="Workflow\Survey10\Collection\Import.aspx" />
+    <Content Include="Workflow\Survey10\Collection\Validate.aspx" />
+    <Content Include="Workflow\Survey10\default.aspx" />
+    <Content Include="Workflow\Survey10\Design\ImportDataDictionary.aspx" />
+    <Content Include="Workflow\Survey10\Design\Importflayout.aspx" />
+    <Content Include="Workflow\Survey10\Design\Initialize.aspx" />
+    <Content Include="Workflow\Survey10\Editing\Corrections.aspx" />
+    <Content Include="Workflow\Survey10\Editing\DeleteEntireWorkbook.aspx" />
+    <Content Include="Workflow\Survey10\Editing\SubTotalValidate.aspx" />
+    <Content Include="Workflow\Survey10\Editing\UpdateMOR.aspx" />
+    <Content Include="Sandbox\Datagrid.aspx" />
+    <Content Include="Sandbox\FileExplorer.aspx" />
+    <Content Include="Styles\Base.css" />
+    <Content Include="Styles\Navigation.css" />
+    <Content Include="usercontrols\DeleteEntireWorkbook.ascx" />
+    <Content Include="usercontrols\ImportFormLayout.ascx" />
+    <Content Include="usercontrols\InitializeDateEntry.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Workflow\LPLR\default.aspx" />
+    <Content Include="Workflow\LPLR\Logs\ProcessLog.aspx" />
+    <Content Include="Workflow\LPLR\Logs\ProcessLogError.aspx" />
+    <Content Include="Workflow\LPLR\Logs\ProcessLogHistory.aspx" />
+    <Content Include="Workflow\LPLR\LookUp\Organization.aspx" />
+    <Content Include="Workflow\LPLR\LookUp\PaymentMultipliers.aspx" />
+    <Content Include="Workflow\LPLR\LookUp\ProductTypes.aspx" />
+    <Content Include="Workflow\LPLR\LookUp\SurveyPeriod.aspx" />
+    <Content Include="Workflow\Survey11\Analysis\default.aspx" />
+    <Content Include="Workflow\Survey11\Collection\BatchProcess.aspx" />
+    <Content Include="Workflow\Survey11\Collection\default.aspx" />
+    <Content Include="Workflow\Survey11\Collection\Format.aspx" />
+    <Content Include="Workflow\Survey11\Collection\Import.aspx" />
+    <Content Include="Workflow\Survey11\Collection\Validate.aspx" />
+    <Content Include="Workflow\Survey11\default.aspx" />
+    <Content Include="Workflow\Survey11\Design\default.aspx" />
+    <Content Include="Workflow\Survey11\Design\ImportDataDictionary.aspx" />
+    <Content Include="Workflow\Survey11\Design\Importflayout.aspx" />
+    <Content Include="Workflow\Survey11\Design\Initialize.aspx" />
+    <Content Include="Workflow\Survey11\Editing\Corrections.aspx" />
+    <Content Include="Workflow\Survey11\Editing\default.aspx" />
+    <Content Include="Workflow\Survey11\Editing\DeleteEntireWorkbook.aspx" />
+    <Content Include="Workflow\Survey11\Editing\SubTotalValidate.aspx" />
+    <Content Include="Workflow\Survey11\Editing\UpdateMOR.aspx" />
+    <Content Include="Workflow\Survey13\Collection\BatchProcess.aspx" />
+    <Content Include="Workflow\Survey13\Collection\Format.aspx" />
+    <Content Include="Workflow\Survey13\Collection\Import.aspx" />
+    <Content Include="Workflow\Survey13\Collection\Validate.aspx" />
+    <Content Include="Workflow\Survey13\default.aspx" />
+    <Content Include="Workflow\Survey13\Design\ImportDataDictionary.aspx" />
+    <Content Include="Workflow\Survey13\Design\Importflayout.aspx" />
+    <Content Include="Workflow\Survey13\Design\Initialize.aspx" />
+    <Content Include="Workflow\Survey13\Editing\Corrections.aspx" />
+    <Content Include="Workflow\Survey13\Editing\DeleteEntireWorkbook.aspx" />
+    <Content Include="Workflow\Survey13\Editing\SubTotalValidate.aspx" />
+    <Content Include="Workflow\Survey13\Editing\UpdateMOR.aspx" />
+    <Content Include="Workflow\Survey14\Analysis\default.aspx" />
+    <Content Include="Workflow\Survey14\Collection\BatchProcess.aspx" />
+    <Content Include="Workflow\Survey14\Collection\default.aspx" />
+    <Content Include="Workflow\Survey14\Collection\Format.aspx" />
+    <Content Include="Workflow\Survey14\Collection\Import.aspx" />
+    <Content Include="Workflow\Survey14\Collection\Validate.aspx" />
+    <Content Include="Workflow\Survey14\default.aspx" />
+    <Content Include="Workflow\Survey14\Design\default.aspx" />
+    <Content Include="Workflow\Survey14\Design\ImportDataDictionary.aspx" />
+    <Content Include="Workflow\Survey14\Design\ImportFLayout.aspx" />
+    <Content Include="Workflow\Survey14\Design\Initialize.aspx" />
+    <Content Include="Workflow\Survey14\Editing\Corrections.aspx" />
+    <Content Include="Workflow\Survey14\Editing\default.aspx" />
+    <Content Include="Workflow\Survey14\Editing\DeleteEntireWorkbook.aspx" />
+    <Content Include="Workflow\Survey14\Editing\SubTotalValidate.aspx" />
+    <Content Include="Workflow\Survey14\Editing\UpdateMOR.aspx" />
+    <Content Include="Workflow\Survey15\Analysis\default.aspx" />
+    <Content Include="Workflow\Survey15\Collection\BatchProcess.aspx" />
+    <Content Include="Workflow\Survey15\Collection\default.aspx" />
+    <Content Include="Workflow\Survey15\Collection\Format.aspx" />
+    <Content Include="Workflow\Survey15\Collection\Import.aspx" />
+    <Content Include="Workflow\Survey15\Collection\Validate.aspx" />
+    <Content Include="Workflow\Survey15\default.aspx" />
+    <Content Include="Workflow\Survey15\Design\Default.aspx" />
+    <Content Include="Workflow\Survey15\Design\Forms.aspx" />
+    <Content Include="Workflow\Survey15\Design\ImportDataDictionary.aspx" />
+    <Content Include="Workflow\Survey15\Design\ImportFLayout.aspx" />
+    <Content Include="Workflow\Survey15\Design\initialize.aspx" />
+    <Content Include="Workflow\Survey15\Design\Items.aspx" />
+    <Content Include="Workflow\Survey15\Design\Status.aspx" />
+    <Content Include="Workflow\Survey15\Editing\Correctionpage2.aspx" />
+    <Content Include="Workflow\Survey15\Editing\corrections.aspx" />
+    <Content Include="Workflow\Survey15\Editing\default.aspx" />
+    <Content Include="Workflow\Survey15\Editing\DeleteEntireWorkbook.aspx" />
+    <Content Include="Workflow\Survey15\Editing\SubTotalValidate.aspx" />
+    <Content Include="Workflow\Survey15\Editing\Trending.aspx" />
+    <Content Include="Workflow\Survey15\Editing\UpdateMOR.aspx" />
+    <Content Include="Workflow\Survey15\Reporting\CreateFactTables.aspx" />
+    <Content Include="Workflow\Survey16\Collection\BatchProcess.aspx" />
+    <Content Include="Workflow\Survey16\Collection\Format.aspx" />
+    <Content Include="Workflow\Survey16\Collection\Import.aspx" />
+    <Content Include="Workflow\Survey16\Collection\Validate.aspx" />
+    <Content Include="Workflow\Survey16\default.aspx" />
+    <Content Include="Workflow\Survey16\Design\ImportDataDictionary.aspx" />
+    <Content Include="Workflow\Survey16\Design\ImportFlayout.aspx" />
+    <Content Include="Workflow\Survey16\Design\Initialize.aspx" />
+    <Content Include="Workflow\Survey16\Editing\Corrections.aspx" />
+    <Content Include="Workflow\Survey16\Editing\Corrections1.aspx" />
+    <Content Include="Workflow\Survey16\Editing\Corrections2.aspx" />
+    <Content Include="Workflow\Survey16\Editing\Corrections3.aspx" />
+    <Content Include="Workflow\Survey16\Editing\Corrections4.aspx" />
+    <Content Include="Workflow\Survey16\Editing\DeleteEntireWorkbook.aspx" />
+    <Content Include="Workflow\Survey16\Editing\SubTotalValidate.aspx" />
+    <Content Include="Workflow\Survey16\Editing\UpdateMOR.aspx" />
+    <Content Include="Workflow\Survey1\Collection\BatchProcess.aspx" />
+    <Content Include="Workflow\Survey1\Design\Importflayout.aspx" />
+    <Content Include="Workflow\Survey1\Reporting\ft001n0.aspx" />
+    <Content Include="Workflow\Survey2\Collection\BatchProcess.aspx" />
+    <Content Include="Workflow\Survey2\Design\Importflayout.aspx" />
+    <Content Include="Workflow\Survey3\Analysis\Default.aspx" />
+    <Content Include="Workflow\Survey3\Collection\BatchProcess.aspx" />
+    <Content Include="Workflow\Survey3\Collection\default.aspx" />
+    <Content Include="Workflow\Survey3\default.aspx" />
+    <Content Include="Workflow\Survey3\Design\Default.aspx" />
+    <Content Include="Workflow\Survey3\Design\Forms.aspx" />
+    <Content Include="Workflow\Survey3\Design\Importflayout.aspx" />
+    <Content Include="Workflow\Survey3\Design\Initialize.aspx" />
+    <Content Include="Workflow\Survey3\Design\Items.aspx" />
+    <Content Include="Workflow\Survey3\Design\Status.aspx" />
+    <Content Include="Workflow\Survey3\Editing\default.aspx" />
+    <Content Include="Workflow\Survey3\Editing\DeleteEntireWorkbook.aspx" />
+    <Content Include="Workflow\Survey3\Editing\trending.aspx" />
+    <Content Include="Workflow\Survey3\Editing\UpdateMOR.aspx" />
+    <Content Include="Workflow\Survey4\Analysis\default.aspx" />
+    <Content Include="Workflow\Survey4\Collection\BatchProcess.aspx" />
+    <Content Include="Workflow\Survey4\Collection\default.aspx" />
+    <Content Include="Workflow\Survey4\default.aspx" />
+    <Content Include="Workflow\Survey4\Design\default.aspx" />
+    <Content Include="Workflow\Survey4\Design\Forms.aspx" />
+    <Content Include="Workflow\Survey4\Design\Importflayout.aspx" />
+    <Content Include="Workflow\Survey4\Design\Initialize.aspx" />
+    <Content Include="Workflow\Survey4\Design\Items.aspx" />
+    <Content Include="Workflow\Survey4\Design\Status.aspx" />
+    <Content Include="Workflow\Survey4\Editing\correctionpage2.aspx" />
+    <Content Include="Workflow\Survey4\Editing\default.aspx" />
+    <Content Include="Workflow\Survey4\Editing\DeleteEntireWorkbook.aspx" />
+    <Content Include="Workflow\Survey4\Editing\trending.aspx" />
+    <Content Include="Workflow\Survey4\Editing\UpdateMOR.aspx" />
+    <Content Include="Workflow\Survey5\Analysis\default.aspx" />
+    <Content Include="Workflow\Survey5\Analysis\ExtractData.aspx" />
+    <Content Include="Workflow\Survey5\Analysis\ExtractParticRpt.aspx" />
+    <Content Include="Workflow\Survey5\Analysis\Industry.aspx" />
+    <Content Include="Workflow\Survey5\Analysis\RefreshData.aspx" />
+    <Content Include="Workflow\Survey5\Collection\BatchProcess.aspx" />
+    <Content Include="Workflow\Survey5\Collection\default.aspx" />
+    <Content Include="Workflow\Survey5\Collection\Format.aspx" />
+    <Content Include="Workflow\Survey5\Collection\Import.aspx" />
+    <Content Include="Workflow\Survey5\Collection\Validate.aspx" />
+    <Content Include="Workflow\Survey5\default.aspx" />
+    <Content Include="Workflow\Survey5\Design\default.aspx" />
+    <Content Include="Workflow\Survey5\Design\Forms.aspx" />
+    <Content Include="Workflow\Survey5\Design\ImportDataDictionary.aspx" />
+    <Content Include="Workflow\Survey5\Design\Initialize.aspx" />
+    <Content Include="Workflow\Survey5\Design\Items.aspx" />
+    <Content Include="Workflow\Survey5\Design\Status.aspx" />
+    <Content Include="Workflow\Survey5\Editing\Corrections.aspx" />
+    <Content Include="Workflow\Survey5\Editing\default.aspx" />
+    <Content Include="Workflow\Survey5\Editing\DeleteEntireWorkbook.aspx" />
+    <Content Include="Workflow\Survey5\Editing\SubTotalValidate.aspx" />
+    <Content Include="Workflow\Survey5\Editing\UpdateMOR.aspx" />
+    <Content Include="Workflow\Survey5\Reporting\CreateFactTables.aspx" />
+    <Content Include="Workflow\Survey5\Reporting\Default.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\DateSeriesmnt.aspx.designer.vb">
+      <DependentUpon>DateSeriesmnt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DateSeriesmnt.aspx.vb">
+      <DependentUpon>DateSeriesmnt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ExcelTest.aspx.designer.vb">
+      <DependentUpon>ExcelTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ExcelTest.aspx.vb">
+      <DependentUpon>ExcelTest.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Groupmnt.aspx.designer.vb">
+      <DependentUpon>Groupmnt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Groupmnt.aspx.vb">
+      <DependentUpon>Groupmnt.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrgMasterMnt.aspx.designer.vb">
+      <DependentUpon>OrgMasterMnt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrgMasterMnt.aspx.vb">
+      <DependentUpon>OrgMasterMnt.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SurveyGroupsMnt.aspx.designer.vb">
+      <DependentUpon>SurveyGroupsMnt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SurveyGroupsMnt.aspx.vb">
+      <DependentUpon>SurveyGroupsMnt.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Surveymnt.aspx.designer.vb">
+      <DependentUpon>Surveymnt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Surveymnt.aspx.vb">
+      <DependentUpon>Surveymnt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SurveySourceMnt.aspx.designer.vb">
+      <DependentUpon>SurveySourceMnt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SurveySourceMnt.aspx.vb">
+      <DependentUpon>SurveySourceMnt.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Usermnt.aspx.designer.vb">
+      <DependentUpon>Usermnt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Usermnt.aspx.vb">
+      <DependentUpon>Usermnt.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Auth\ForgotPassword.aspx.designer.vb">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auth\ForgotPassword.aspx.vb">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Auth\login.aspx.designer.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auth\login.aspx.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Auth\logout.aspx.designer.vb">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auth\logout.aspx.vb">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Classes\DataDictionaryDataContext.vb" />
+    <Compile Include="Classes\dbconn.vb" />
+    <Compile Include="Classes\Globals.vb" />
+    <Compile Include="Classes\Projects.vb" />
+    <Compile Include="Classes\SalesSurveyDBDataContext.vb" />
+    <Compile Include="Classes\Security.vb" />
+    <Compile Include="Classes\Validator.vb" />
+    <Compile Include="DataContext\DataDictionary.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataDictionary.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\DataDictionary.vb">
+      <DependentUpon>DataDictionary.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\SalesSurveyDB.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesSurveyDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\SalesSurveyDB.vb">
+      <DependentUpon>SalesSurveyDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\AjaxLoadingImageTest.aspx.designer.vb">
+      <DependentUpon>AjaxLoadingImageTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\AjaxLoadingImageTest.aspx.vb">
+      <DependentUpon>AjaxLoadingImageTest.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\checkboxvalue.aspx.designer.vb">
+      <DependentUpon>checkboxvalue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\checkboxvalue.aspx.vb">
+      <DependentUpon>checkboxvalue.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\importtest.aspx.designer.vb">
+      <DependentUpon>importtest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\importtest.aspx.vb">
+      <DependentUpon>importtest.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\CreateFactTablesII.ascx.designer.vb">
+      <DependentUpon>CreateFactTablesII.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\CreateFactTablesII.ascx.vb">
+      <DependentUpon>CreateFactTablesII.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\UpdateMORAllPages.ascx.designer.vb">
+      <DependentUpon>UpdateMORAllPages.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\UpdateMORAllPages.ascx.vb">
+      <DependentUpon>UpdateMORAllPages.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\WorkflowBatchProcess.ascx.designer.vb">
+      <DependentUpon>WorkflowBatchProcess.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\WorkflowBatchProcess.ascx.vb">
+      <DependentUpon>WorkflowBatchProcess.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities\IDLookups.aspx.designer.vb">
+      <DependentUpon>IDLookups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\IDLookups.aspx.vb">
+      <DependentUpon>IDLookups.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\LPLR\Reports\SSASReconciliation.aspx.designer.vb">
+      <DependentUpon>SSASReconciliation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\LPLR\Reports\SSASReconciliation.aspx.vb">
+      <DependentUpon>SSASReconciliation.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Collection\BatchProcess.aspx.designer.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Collection\BatchProcess.aspx.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Collection\Format.aspx.designer.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Collection\Format.aspx.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Collection\Import.aspx.designer.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Collection\Import.aspx.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Collection\Validate.aspx.designer.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Collection\Validate.aspx.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey10\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey10\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Design\ImportDataDictionary.aspx.designer.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Design\ImportDataDictionary.aspx.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Design\Importflayout.aspx.designer.vb">
+      <DependentUpon>Importflayout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Design\Importflayout.aspx.vb">
+      <DependentUpon>Importflayout.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Design\Initialize.aspx.designer.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Design\Initialize.aspx.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Editing\Corrections.aspx.designer.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Editing\Corrections.aspx.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Editing\DeleteEntireWorkbook.aspx.designer.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Editing\DeleteEntireWorkbook.aspx.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Editing\SubTotalValidate.aspx.designer.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Editing\SubTotalValidate.aspx.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Editing\UpdateMOR.aspx.designer.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey10\Editing\UpdateMOR.aspx.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ErrorHandling\GlobalError.aspx.designer.vb">
+      <DependentUpon>GlobalError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorHandling\GlobalError.aspx.vb">
+      <DependentUpon>GlobalError.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Admin.Master.designer.vb">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Admin.Master.vb">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Site.Master.designer.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Site.Master.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Sandbox\calculateVariable.aspx.designer.vb">
+      <DependentUpon>calculateVariable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\calculateVariable.aspx.vb">
+      <DependentUpon>calculateVariable.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\calculateYTD.aspx.designer.vb">
+      <DependentUpon>calculateYTD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\calculateYTD.aspx.vb">
+      <DependentUpon>calculateYTD.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\calcVarCustom.aspx.designer.vb">
+      <DependentUpon>calcVarCustom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\calcVarCustom.aspx.vb">
+      <DependentUpon>calcVarCustom.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\calcVarStandard.aspx.designer.vb">
+      <DependentUpon>calcVarStandard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\calcVarStandard.aspx.vb">
+      <DependentUpon>calcVarStandard.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\combineWorkbooks.aspx.designer.vb">
+      <DependentUpon>combineWorkbooks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\combineWorkbooks.aspx.vb">
+      <DependentUpon>combineWorkbooks.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\createFactTable.aspx.designer.vb">
+      <DependentUpon>createFactTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\createFactTable.aspx.vb">
+      <DependentUpon>createFactTable.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\Datagrid.aspx.designer.vb">
+      <DependentUpon>Datagrid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\Datagrid.aspx.vb">
+      <DependentUpon>Datagrid.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\DDTest.aspx.designer.vb">
+      <DependentUpon>DDTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\DDTest.aspx.vb">
+      <DependentUpon>DDTest.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\FileExplorer.aspx.designer.vb">
+      <DependentUpon>FileExplorer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\FileExplorer.aspx.vb">
+      <DependentUpon>FileExplorer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\getDataDictionary.aspx.designer.vb">
+      <DependentUpon>getDataDictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\getDataDictionary.aspx.vb">
+      <DependentUpon>getDataDictionary.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\progressindicator.aspx.designer.vb">
+      <DependentUpon>progressindicator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\progressindicator.aspx.vb">
+      <DependentUpon>progressindicator.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\showProgressbar.aspx.designer.vb">
+      <DependentUpon>showProgressbar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\showProgressbar.aspx.vb">
+      <DependentUpon>showProgressbar.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\SumOf.aspx.designer.vb">
+      <DependentUpon>SumOf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\SumOf.aspx.vb">
+      <DependentUpon>SumOf.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\TestError.aspx.designer.vb">
+      <DependentUpon>TestError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\TestError.aspx.vb">
+      <DependentUpon>TestError.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\TestExcept.aspx.designer.vb">
+      <DependentUpon>TestExcept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\TestExcept.aspx.vb">
+      <DependentUpon>TestExcept.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\try1Formatting.aspx.designer.vb">
+      <DependentUpon>try1Formatting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\try1Formatting.aspx.vb">
+      <DependentUpon>try1Formatting.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\zreadWorkSheet.aspx.designer.vb">
+      <DependentUpon>zreadWorkSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\zreadWorkSheet.aspx.vb">
+      <DependentUpon>zreadWorkSheet.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="usercontrols\CreateFactTable.ascx.designer.vb">
+      <DependentUpon>CreateFactTable.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\CreateFactTable.ascx.vb">
+      <DependentUpon>CreateFactTable.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\DataEditForm.ascx.designer.vb">
+      <DependentUpon>DataEditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\DataEditForm.ascx.vb">
+      <DependentUpon>DataEditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\DeleteEntireWorkbook.ascx.designer.vb">
+      <DependentUpon>DeleteEntireWorkbook.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\DeleteEntireWorkbook.ascx.vb">
+      <DependentUpon>DeleteEntireWorkbook.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\ErrorMessage.ascx.designer.vb">
+      <DependentUpon>ErrorMessage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\ErrorMessage.ascx.vb">
+      <DependentUpon>ErrorMessage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\ImportDataDictionary_V2.ascx.designer.vb">
+      <DependentUpon>ImportDataDictionary_V2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\ImportDataDictionary_V2.ascx.vb">
+      <DependentUpon>ImportDataDictionary_V2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\ImportFormLayout.ascx.designer.vb">
+      <DependentUpon>ImportFormLayout.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\ImportFormLayout.ascx.vb">
+      <DependentUpon>ImportFormLayout.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\InitializeDateEntry.ascx.designer.vb">
+      <DependentUpon>InitializeDateEntry.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\InitializeDateEntry.ascx.vb">
+      <DependentUpon>InitializeDateEntry.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\NotAuthorized.ascx.designer.vb">
+      <DependentUpon>NotAuthorized.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\NotAuthorized.ascx.vb">
+      <DependentUpon>NotAuthorized.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\UpdateMOR.ascx.designer.vb">
+      <DependentUpon>UpdateMOR.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\UpdateMOR.ascx.vb">
+      <DependentUpon>UpdateMOR.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\WorkflowFormat.ascx.designer.vb">
+      <DependentUpon>WorkflowFormat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\WorkflowFormat.ascx.vb">
+      <DependentUpon>WorkflowFormat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\WorkflowImport.ascx.designer.vb">
+      <DependentUpon>WorkflowImport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\WorkflowImport.ascx.vb">
+      <DependentUpon>WorkflowImport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\WorkflowValidate.ascx.designer.vb">
+      <DependentUpon>WorkflowValidate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\WorkflowValidate.ascx.vb">
+      <DependentUpon>WorkflowValidate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\LPLR\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\LPLR\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\LPLR\Logs\ProcessLog.aspx.designer.vb">
+      <DependentUpon>ProcessLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\LPLR\Logs\ProcessLog.aspx.vb">
+      <DependentUpon>ProcessLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\LPLR\Logs\ProcessLogError.aspx.designer.vb">
+      <DependentUpon>ProcessLogError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\LPLR\Logs\ProcessLogError.aspx.vb">
+      <DependentUpon>ProcessLogError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\LPLR\Logs\ProcessLogHistory.aspx.designer.vb">
+      <DependentUpon>ProcessLogHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\LPLR\Logs\ProcessLogHistory.aspx.vb">
+      <DependentUpon>ProcessLogHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\LPLR\LookUp\Organization.aspx.designer.vb">
+      <DependentUpon>Organization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\LPLR\LookUp\Organization.aspx.vb">
+      <DependentUpon>Organization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\LPLR\LookUp\PaymentMultipliers.aspx.designer.vb">
+      <DependentUpon>PaymentMultipliers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\LPLR\LookUp\PaymentMultipliers.aspx.vb">
+      <DependentUpon>PaymentMultipliers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\LPLR\LookUp\ProductTypes.aspx.designer.vb">
+      <DependentUpon>ProductTypes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\LPLR\LookUp\ProductTypes.aspx.vb">
+      <DependentUpon>ProductTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\LPLR\LookUp\SurveyPeriod.aspx.designer.vb">
+      <DependentUpon>SurveyPeriod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\LPLR\LookUp\SurveyPeriod.aspx.vb">
+      <DependentUpon>SurveyPeriod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Analysis\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Analysis\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Collection\BatchProcess.aspx.designer.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Collection\BatchProcess.aspx.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Collection\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Collection\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Collection\Format.aspx.designer.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Collection\Format.aspx.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Collection\Import.aspx.designer.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Collection\Import.aspx.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Collection\Validate.aspx.designer.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Collection\Validate.aspx.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey11\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey11\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Design\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Design\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Design\ImportDataDictionary.aspx.designer.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Design\ImportDataDictionary.aspx.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Design\Importflayout.aspx.designer.vb">
+      <DependentUpon>Importflayout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Design\Importflayout.aspx.vb">
+      <DependentUpon>Importflayout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Design\Initialize.aspx.designer.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Design\Initialize.aspx.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Editing\Corrections.aspx.designer.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Editing\Corrections.aspx.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Editing\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Editing\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Editing\DeleteEntireWorkbook.aspx.designer.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Editing\DeleteEntireWorkbook.aspx.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Editing\SubTotalValidate.aspx.designer.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Editing\SubTotalValidate.aspx.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Editing\UpdateMOR.aspx.designer.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey11\Editing\UpdateMOR.aspx.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Collection\BatchProcess.aspx.designer.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Collection\BatchProcess.aspx.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Collection\Format.aspx.designer.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Collection\Format.aspx.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Collection\Import.aspx.designer.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Collection\Import.aspx.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Collection\Validate.aspx.designer.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Collection\Validate.aspx.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey13\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey13\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Design\ImportDataDictionary.aspx.designer.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Design\ImportDataDictionary.aspx.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Design\Importflayout.aspx.designer.vb">
+      <DependentUpon>Importflayout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Design\Importflayout.aspx.vb">
+      <DependentUpon>Importflayout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Design\Initialize.aspx.designer.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Design\Initialize.aspx.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Editing\Corrections.aspx.designer.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Editing\Corrections.aspx.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Editing\DeleteEntireWorkbook.aspx.designer.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Editing\DeleteEntireWorkbook.aspx.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Editing\SubTotalValidate.aspx.designer.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Editing\SubTotalValidate.aspx.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Editing\UpdateMOR.aspx.designer.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey13\Editing\UpdateMOR.aspx.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Analysis\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Analysis\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Collection\BatchProcess.aspx.designer.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Collection\BatchProcess.aspx.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Collection\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Collection\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Collection\Format.aspx.designer.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Collection\Format.aspx.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Collection\Import.aspx.designer.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Collection\Import.aspx.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Collection\Validate.aspx.designer.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Collection\Validate.aspx.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey14\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey14\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Design\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Design\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Design\ImportDataDictionary.aspx.designer.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Design\ImportDataDictionary.aspx.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Design\ImportFLayout.aspx.designer.vb">
+      <DependentUpon>ImportFLayout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Design\ImportFLayout.aspx.vb">
+      <DependentUpon>ImportFLayout.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Design\Initialize.aspx.designer.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Design\Initialize.aspx.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Editing\Corrections.aspx.designer.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Editing\Corrections.aspx.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Editing\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Editing\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Editing\DeleteEntireWorkbook.aspx.designer.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Editing\DeleteEntireWorkbook.aspx.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Editing\SubTotalValidate.aspx.designer.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Editing\SubTotalValidate.aspx.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Editing\UpdateMOR.aspx.designer.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey14\Editing\UpdateMOR.aspx.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Analysis\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Analysis\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Collection\BatchProcess.aspx.designer.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Collection\BatchProcess.aspx.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Collection\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Collection\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Collection\Format.aspx.designer.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Collection\Format.aspx.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Collection\Import.aspx.designer.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Collection\Import.aspx.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Collection\Validate.aspx.designer.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Collection\Validate.aspx.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Design\Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Design\Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Design\Forms.aspx.designer.vb">
+      <DependentUpon>Forms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Design\Forms.aspx.vb">
+      <DependentUpon>Forms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Design\ImportDataDictionary.aspx.designer.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Design\ImportDataDictionary.aspx.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Design\ImportFLayout.aspx.designer.vb">
+      <DependentUpon>ImportFLayout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Design\ImportFLayout.aspx.vb">
+      <DependentUpon>ImportFLayout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Design\initialize.aspx.designer.vb">
+      <DependentUpon>initialize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Design\initialize.aspx.vb">
+      <DependentUpon>initialize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Design\Items.aspx.designer.vb">
+      <DependentUpon>Items.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Design\Items.aspx.vb">
+      <DependentUpon>Items.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Design\Status.aspx.designer.vb">
+      <DependentUpon>Status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Design\Status.aspx.vb">
+      <DependentUpon>Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Editing\Correctionpage2.aspx.designer.vb">
+      <DependentUpon>Correctionpage2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Editing\Correctionpage2.aspx.vb">
+      <DependentUpon>Correctionpage2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Editing\corrections.aspx.designer.vb">
+      <DependentUpon>corrections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Editing\corrections.aspx.vb">
+      <DependentUpon>corrections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Editing\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Editing\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Editing\DeleteEntireWorkbook.aspx.designer.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Editing\DeleteEntireWorkbook.aspx.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Editing\SubTotalValidate.aspx.designer.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Editing\SubTotalValidate.aspx.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Editing\Trending.aspx.designer.vb">
+      <DependentUpon>Trending.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Editing\Trending.aspx.vb">
+      <DependentUpon>Trending.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Editing\UpdateMOR.aspx.designer.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Editing\UpdateMOR.aspx.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Reporting\CreateFactTables.aspx.designer.vb">
+      <DependentUpon>CreateFactTables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey15\Reporting\CreateFactTables.aspx.vb">
+      <DependentUpon>CreateFactTables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Collection\BatchProcess.aspx.designer.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Collection\BatchProcess.aspx.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Collection\Format.aspx.designer.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Collection\Format.aspx.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Collection\Import.aspx.designer.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Collection\Import.aspx.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Collection\Validate.aspx.designer.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Collection\Validate.aspx.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey16\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey16\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Design\ImportDataDictionary.aspx.designer.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Design\ImportDataDictionary.aspx.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Design\ImportFlayout.aspx.designer.vb">
+      <DependentUpon>ImportFlayout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Design\ImportFlayout.aspx.vb">
+      <DependentUpon>ImportFlayout.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Design\Initialize.aspx.designer.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Design\Initialize.aspx.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Editing\Corrections.aspx.designer.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Editing\Corrections.aspx.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Editing\Corrections1.aspx.designer.vb">
+      <DependentUpon>Corrections1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Editing\Corrections1.aspx.vb">
+      <DependentUpon>Corrections1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Editing\Corrections2.aspx.designer.vb">
+      <DependentUpon>Corrections2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Editing\Corrections2.aspx.vb">
+      <DependentUpon>Corrections2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Editing\Corrections3.aspx.designer.vb">
+      <DependentUpon>Corrections3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Editing\Corrections3.aspx.vb">
+      <DependentUpon>Corrections3.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Editing\Corrections4.aspx.designer.vb">
+      <DependentUpon>Corrections4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Editing\Corrections4.aspx.vb">
+      <DependentUpon>Corrections4.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Editing\DeleteEntireWorkbook.aspx.designer.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Editing\DeleteEntireWorkbook.aspx.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Editing\SubTotalValidate.aspx.designer.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Editing\SubTotalValidate.aspx.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Editing\UpdateMOR.aspx.designer.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey16\Editing\UpdateMOR.aspx.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Analysis\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Analysis\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Analysis\Industry.aspx.designer.vb">
+      <DependentUpon>Industry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Analysis\Industry.aspx.vb">
+      <DependentUpon>Industry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Analysis\RefreshData.aspx.designer.vb">
+      <DependentUpon>RefreshData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Analysis\RefreshData.aspx.vb">
+      <DependentUpon>RefreshData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Collection\BatchProcess.aspx.designer.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Collection\BatchProcess.aspx.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Collection\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Collection\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Collection\Format.aspx.designer.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Collection\Format.aspx.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Collection\Import.aspx.designer.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Collection\Import.aspx.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Collection\Validate.aspx.designer.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Collection\Validate.aspx.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Design\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Design\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Design\Forms.aspx.designer.vb">
+      <DependentUpon>Forms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Design\Forms.aspx.vb">
+      <DependentUpon>Forms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Design\ImportDataDictionary.aspx.designer.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Design\ImportDataDictionary.aspx.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Design\Importflayout.aspx.designer.vb">
+      <DependentUpon>Importflayout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Design\Importflayout.aspx.vb">
+      <DependentUpon>Importflayout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Design\Initialize.aspx.designer.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Design\Initialize.aspx.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Design\Items.aspx.designer.vb">
+      <DependentUpon>Items.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Design\Items.aspx.vb">
+      <DependentUpon>Items.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Design\Status.aspx.designer.vb">
+      <DependentUpon>Status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Design\Status.aspx.vb">
+      <DependentUpon>Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Editing\Corrections.aspx.designer.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Editing\Corrections.aspx.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Editing\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Editing\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Editing\DeleteEntireWorkbook.aspx.designer.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Editing\DeleteEntireWorkbook.aspx.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Editing\SubTotalValidate.aspx.designer.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Editing\SubTotalValidate.aspx.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Editing\UpdateMOR.aspx.designer.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Editing\UpdateMOR.aspx.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Reporting\CreateFactTables.aspx.designer.vb">
+      <DependentUpon>CreateFactTables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Reporting\CreateFactTables.aspx.vb">
+      <DependentUpon>CreateFactTables.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Reporting\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Reporting\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Reporting\ft001n0.aspx.designer.vb">
+      <DependentUpon>ft001n0.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey1\Reporting\ft001n0.aspx.vb">
+      <DependentUpon>ft001n0.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Analysis\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Analysis\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Analysis\ExtractData.aspx.designer.vb">
+      <DependentUpon>ExtractData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Analysis\ExtractData.aspx.vb">
+      <DependentUpon>ExtractData.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Analysis\ExtractParticRpt.aspx.designer.vb">
+      <DependentUpon>ExtractParticRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Analysis\ExtractParticRpt.aspx.vb">
+      <DependentUpon>ExtractParticRpt.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Analysis\Industry.aspx.designer.vb">
+      <DependentUpon>Industry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Analysis\Industry.aspx.vb">
+      <DependentUpon>Industry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Analysis\RefreshData.aspx.designer.vb">
+      <DependentUpon>RefreshData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Analysis\RefreshData.aspx.vb">
+      <DependentUpon>RefreshData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Collection\BatchProcess.aspx.designer.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Collection\BatchProcess.aspx.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Collection\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Collection\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Collection\Format.aspx.designer.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Collection\Format.aspx.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Collection\Import.aspx.designer.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Collection\Import.aspx.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Collection\Validate.aspx.designer.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Collection\Validate.aspx.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Design\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Design\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Design\Forms.aspx.designer.vb">
+      <DependentUpon>Forms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Design\Forms.aspx.vb">
+      <DependentUpon>Forms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Design\ImportDataDictionary.aspx.designer.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Design\ImportDataDictionary.aspx.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Design\Importflayout.aspx.designer.vb">
+      <DependentUpon>Importflayout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Design\Importflayout.aspx.vb">
+      <DependentUpon>Importflayout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Design\Initialize.aspx.designer.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Design\Initialize.aspx.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Design\Items.aspx.designer.vb">
+      <DependentUpon>Items.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Design\Items.aspx.vb">
+      <DependentUpon>Items.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Design\Status.aspx.designer.vb">
+      <DependentUpon>Status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Design\Status.aspx.vb">
+      <DependentUpon>Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Editing\Corrections.aspx.designer.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Editing\Corrections.aspx.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Editing\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Editing\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Editing\DeleteEntireWorkbook.aspx.designer.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Editing\DeleteEntireWorkbook.aspx.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Editing\SubTotalValidate.aspx.designer.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Editing\SubTotalValidate.aspx.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Editing\trending.aspx.designer.vb">
+      <DependentUpon>trending.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Editing\trending.aspx.vb">
+      <DependentUpon>trending.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Editing\UpdateMOR.aspx.designer.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Editing\UpdateMOR.aspx.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Reporting\CreateFactTables.aspx.designer.vb">
+      <DependentUpon>CreateFactTables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Reporting\CreateFactTables.aspx.vb">
+      <DependentUpon>CreateFactTables.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Reporting\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey2\Reporting\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Analysis\Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Analysis\Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Collection\BatchProcess.aspx.designer.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Collection\BatchProcess.aspx.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Collection\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Collection\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Collection\Format.aspx.designer.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Collection\Format.aspx.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Collection\Import.aspx.designer.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Collection\Import.aspx.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Collection\Validate.aspx.designer.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Collection\Validate.aspx.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Design\Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Design\Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Design\Forms.aspx.designer.vb">
+      <DependentUpon>Forms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Design\Forms.aspx.vb">
+      <DependentUpon>Forms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Design\ImportDataDictionary.aspx.designer.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Design\ImportDataDictionary.aspx.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Design\Importflayout.aspx.designer.vb">
+      <DependentUpon>Importflayout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Design\Importflayout.aspx.vb">
+      <DependentUpon>Importflayout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Design\Initialize.aspx.designer.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Design\Initialize.aspx.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Design\Items.aspx.designer.vb">
+      <DependentUpon>Items.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Design\Items.aspx.vb">
+      <DependentUpon>Items.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Design\Status.aspx.designer.vb">
+      <DependentUpon>Status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Design\Status.aspx.vb">
+      <DependentUpon>Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Editing\Corrections.aspx.designer.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Editing\Corrections.aspx.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Editing\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Editing\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Editing\DeleteEntireWorkbook.aspx.designer.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Editing\DeleteEntireWorkbook.aspx.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Editing\SubTotalValidate.aspx.designer.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Editing\SubTotalValidate.aspx.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Editing\trending.aspx.designer.vb">
+      <DependentUpon>trending.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Editing\trending.aspx.vb">
+      <DependentUpon>trending.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Editing\UpdateMOR.aspx.designer.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Editing\UpdateMOR.aspx.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Reporting\CreateFactTables.aspx.designer.vb">
+      <DependentUpon>CreateFactTables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey3\Reporting\CreateFactTables.aspx.vb">
+      <DependentUpon>CreateFactTables.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Analysis\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Analysis\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Collection\BatchProcess.aspx.designer.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Collection\BatchProcess.aspx.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Collection\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Collection\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Collection\Format.aspx.designer.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Collection\Format.aspx.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Collection\Import.aspx.designer.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Collection\Import.aspx.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Collection\Validate.aspx.designer.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Collection\Validate.aspx.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Design\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Design\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Design\Forms.aspx.designer.vb">
+      <DependentUpon>Forms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Design\Forms.aspx.vb">
+      <DependentUpon>Forms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Design\ImportDataDictionary.aspx.designer.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Design\ImportDataDictionary.aspx.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Design\Importflayout.aspx.designer.vb">
+      <DependentUpon>Importflayout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Design\Importflayout.aspx.vb">
+      <DependentUpon>Importflayout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Design\Initialize.aspx.designer.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Design\Initialize.aspx.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Design\Items.aspx.designer.vb">
+      <DependentUpon>Items.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Design\Items.aspx.vb">
+      <DependentUpon>Items.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Design\Status.aspx.designer.vb">
+      <DependentUpon>Status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Design\Status.aspx.vb">
+      <DependentUpon>Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Editing\correctionpage2.aspx.designer.vb">
+      <DependentUpon>correctionpage2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Editing\correctionpage2.aspx.vb">
+      <DependentUpon>correctionpage2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Editing\Corrections.aspx.designer.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Editing\Corrections.aspx.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Editing\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Editing\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Editing\DeleteEntireWorkbook.aspx.designer.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Editing\DeleteEntireWorkbook.aspx.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Editing\SubTotalValidate.aspx.designer.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Editing\SubTotalValidate.aspx.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Editing\trending.aspx.designer.vb">
+      <DependentUpon>trending.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Editing\trending.aspx.vb">
+      <DependentUpon>trending.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Editing\UpdateMOR.aspx.designer.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Editing\UpdateMOR.aspx.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Reporting\CreateFactTables.aspx.designer.vb">
+      <DependentUpon>CreateFactTables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey4\Reporting\CreateFactTables.aspx.vb">
+      <DependentUpon>CreateFactTables.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Analysis\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Analysis\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Analysis\ExtractData.aspx.designer.vb">
+      <DependentUpon>ExtractData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Analysis\ExtractData.aspx.vb">
+      <DependentUpon>ExtractData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Analysis\ExtractParticRpt.aspx.designer.vb">
+      <DependentUpon>ExtractParticRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Analysis\ExtractParticRpt.aspx.vb">
+      <DependentUpon>ExtractParticRpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Analysis\Industry.aspx.designer.vb">
+      <DependentUpon>Industry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Analysis\Industry.aspx.vb">
+      <DependentUpon>Industry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Analysis\RefreshData.aspx.designer.vb">
+      <DependentUpon>RefreshData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Analysis\RefreshData.aspx.vb">
+      <DependentUpon>RefreshData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Collection\BatchProcess.aspx.designer.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Collection\BatchProcess.aspx.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Collection\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Collection\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Collection\Format.aspx.designer.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Collection\Format.aspx.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Collection\Import.aspx.designer.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Collection\Import.aspx.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Collection\Validate.aspx.designer.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Collection\Validate.aspx.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Design\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Design\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Design\Forms.aspx.designer.vb">
+      <DependentUpon>Forms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Design\Forms.aspx.vb">
+      <DependentUpon>Forms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Design\ImportDataDictionary.aspx.designer.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Design\ImportDataDictionary.aspx.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Design\Initialize.aspx.designer.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Design\Initialize.aspx.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Design\Items.aspx.designer.vb">
+      <DependentUpon>Items.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Design\Items.aspx.vb">
+      <DependentUpon>Items.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Design\Status.aspx.designer.vb">
+      <DependentUpon>Status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Design\Status.aspx.vb">
+      <DependentUpon>Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Editing\Corrections.aspx.designer.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Editing\Corrections.aspx.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Editing\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Editing\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Editing\DeleteEntireWorkbook.aspx.designer.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Editing\DeleteEntireWorkbook.aspx.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Editing\SubTotalValidate.aspx.designer.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Editing\SubTotalValidate.aspx.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Editing\UpdateMOR.aspx.designer.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Editing\UpdateMOR.aspx.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Reporting\CreateFactTables.aspx.designer.vb">
+      <DependentUpon>CreateFactTables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Reporting\CreateFactTables.aspx.vb">
+      <DependentUpon>CreateFactTables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Reporting\Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey5\Reporting\Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Analysis\NetFlowsExtractAll.aspx.designer.vb">
+      <DependentUpon>NetFlowsExtractAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Analysis\NetFlowsExtractAll.aspx.vb">
+      <DependentUpon>NetFlowsExtractAll.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Analysis\NetFlowsExtractQuarterly.aspx.designer.vb">
+      <DependentUpon>NetFlowsExtractQuarterly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Analysis\NetFlowsExtractQuarterly.aspx.vb">
+      <DependentUpon>NetFlowsExtractQuarterly.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Collection\BatchProcess.aspx.designer.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Collection\BatchProcess.aspx.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Collection\Format.aspx.designer.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Collection\Format.aspx.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Collection\Import.aspx.designer.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Collection\Import.aspx.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Collection\Validate.aspx.designer.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Collection\Validate.aspx.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey7\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey7\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Design\ImportDataDictionary.aspx.designer.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Design\ImportDataDictionary.aspx.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Design\Importflayout.aspx.designer.vb">
+      <DependentUpon>Importflayout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Design\Importflayout.aspx.vb">
+      <DependentUpon>Importflayout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Design\Initialize.aspx.designer.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Design\Initialize.aspx.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Editing\Corrections.aspx.designer.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Editing\Corrections.aspx.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Editing\DeleteEntireWorkbook.aspx.designer.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Editing\DeleteEntireWorkbook.aspx.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Editing\SubTotalValidate.aspx.designer.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Editing\SubTotalValidate.aspx.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Editing\UpdateMOR.aspx.designer.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey7\Editing\UpdateMOR.aspx.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Collection\BatchProcess.aspx.designer.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Collection\BatchProcess.aspx.vb">
+      <DependentUpon>BatchProcess.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Collection\Format.aspx.designer.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Collection\Format.aspx.vb">
+      <DependentUpon>Format.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Collection\Import.aspx.designer.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Collection\Import.aspx.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Collection\Validate.aspx.designer.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Collection\Validate.aspx.vb">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey8\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey8\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Design\ImportDataDictionary.aspx.designer.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Design\ImportDataDictionary.aspx.vb">
+      <DependentUpon>ImportDataDictionary.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Design\Importflayout.aspx.designer.vb">
+      <DependentUpon>Importflayout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Design\Importflayout.aspx.vb">
+      <DependentUpon>Importflayout.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Design\Initialize.aspx.designer.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Design\Initialize.aspx.vb">
+      <DependentUpon>Initialize.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Editing\Corrections.aspx.designer.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Editing\Corrections.aspx.vb">
+      <DependentUpon>Corrections.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Editing\DeleteEntireWorkbook.aspx.designer.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Editing\DeleteEntireWorkbook.aspx.vb">
+      <DependentUpon>DeleteEntireWorkbook.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Editing\SubTotalValidate.aspx.designer.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Editing\SubTotalValidate.aspx.vb">
+      <DependentUpon>SubTotalValidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Editing\UpdateMOR.aspx.designer.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Survey8\Editing\UpdateMOR.aspx.vb">
+      <DependentUpon>UpdateMOR.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataContext\SalesSurveyDB.dbml.layout">
+      <DependentUpon>SalesSurveyDB.dbml</DependentUpon>
+    </None>
+    <None Include="DataContext\DataDictionary.dbml.layout">
+      <DependentUpon>DataDictionary.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\DateSeriesmnt.aspx" />
+    <Content Include="Admin\default.aspx" />
+    <Content Include="Admin\ExcelTest.aspx" />
+    <Content Include="Admin\Groupmnt.aspx" />
+    <Content Include="Admin\OrgMasterMnt.aspx" />
+    <Content Include="Admin\SurveyGroupsMnt.aspx" />
+    <Content Include="Admin\Surveymnt.aspx" />
+    <Content Include="Admin\SurveySourceMnt.aspx" />
+    <Content Include="Admin\Usermnt.aspx" />
+    <Content Include="Auth\ForgotPassword.aspx" />
+    <Content Include="Auth\login.aspx" />
+    <Content Include="Auth\logout.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="ErrorHandling\GlobalError.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\icons_plusminus.gif" />
+    <Content Include="Images\learnmorearrow.gif" />
+    <Content Include="Images\loading1.gif" />
+    <Content Include="Images\loading2.gif" />
+    <Content Include="Images\loading3.gif" />
+    <Content Include="Images\loading4.gif" />
+    <Content Include="Images\loading5.gif" />
+    <Content Include="Images\PleaseWait.gif" />
+    <Content Include="Images\Warning20p.GIF" />
+    <Content Include="Images\Windows7Background.jpg" />
+    <Content Include="jquery\jquery-1.5.2.min.js" />
+    <Content Include="Masters\Site.Master" />
+    <Content Include="Sandbox\calculateVariable.aspx" />
+    <Content Include="Sandbox\calculateYTD.aspx" />
+    <Content Include="Sandbox\calcVarCustom.aspx" />
+    <Content Include="Sandbox\calcVarStandard.aspx" />
+    <Content Include="Sandbox\combineWorkbooks.aspx" />
+    <Content Include="Sandbox\createFactTable.aspx" />
+    <Content Include="Sandbox\DDTest.aspx" />
+    <Content Include="Sandbox\getDataDictionary.aspx" />
+    <Content Include="Sandbox\progressindicator.aspx" />
+    <Content Include="Sandbox\showProgressbar.aspx" />
+    <Content Include="Sandbox\SumOf.aspx" />
+    <Content Include="Sandbox\TestError.aspx" />
+    <Content Include="Sandbox\TestExcept.aspx" />
+    <Content Include="Sandbox\try1Formatting.aspx" />
+    <Content Include="Sandbox\zreadWorkSheet.aspx" />
+    <Content Include="usercontrols\CreateFactTable.ascx" />
+    <Content Include="usercontrols\DataEditForm.ascx" />
+    <Content Include="usercontrols\ErrorMessage.ascx" />
+    <Content Include="usercontrols\ImportDataDictionary_V2.ascx" />
+    <Content Include="usercontrols\NotAuthorized.ascx" />
+    <Content Include="Masters\Admin.Master" />
+    <None Include="DataContext\DataDictionary.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataDictionary.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataContext\SalesSurveyDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>SalesSurveyDB.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\PublishProfiles\Sales Survey V 1.3.pubxml" />
+    <None Include="My Project\PublishProfiles\Sales Survey V1.2.pubxml" />
+    <None Include="My Project\PublishProfiles\SalesSurvey V 1.1.pubxml" />
+    <None Include="My Project\PublishProfiles\SalesSurveyAnalysisSystemCompiled.pubxml" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="usercontrols\UpdateMOR.ascx" />
+    <Content Include="usercontrols\WorkflowFormat.ascx" />
+    <Content Include="usercontrols\WorkflowImport.ascx" />
+    <Content Include="usercontrols\WorkflowValidate.ascx" />
+    <Content Include="Web.sitemap" />
+    <Content Include="Workflow\default.aspx" />
+    <Content Include="Workflow\Survey1\Analysis\default.aspx" />
+    <Content Include="Workflow\Survey1\Analysis\Industry.aspx" />
+    <Content Include="Workflow\Survey1\Analysis\RefreshData.aspx" />
+    <Content Include="Workflow\Survey1\Collection\default.aspx" />
+    <Content Include="Workflow\Survey1\Collection\Format.aspx" />
+    <Content Include="Workflow\Survey1\Collection\Import.aspx" />
+    <Content Include="Workflow\Survey1\Collection\Validate.aspx" />
+    <Content Include="Workflow\Survey1\default.aspx" />
+    <Content Include="Workflow\Survey1\Design\default.aspx" />
+    <Content Include="Workflow\Survey1\Design\Forms.aspx" />
+    <Content Include="Workflow\Survey1\Design\ImportDataDictionary.aspx" />
+    <Content Include="Workflow\Survey1\Design\Initialize.aspx" />
+    <Content Include="Workflow\Survey1\Design\Items.aspx" />
+    <Content Include="Workflow\Survey1\Design\Status.aspx" />
+    <Content Include="Workflow\Survey1\Editing\Corrections.aspx" />
+    <Content Include="Workflow\Survey1\Editing\default.aspx" />
+    <Content Include="Workflow\Survey1\Editing\DeleteEntireWorkbook.aspx" />
+    <Content Include="Workflow\Survey1\Editing\SubTotalValidate.aspx" />
+    <Content Include="Workflow\Survey1\Editing\UpdateMOR.aspx" />
+    <Content Include="Workflow\Survey1\Reporting\CreateFactTables.aspx" />
+    <Content Include="Workflow\Survey1\Reporting\default.aspx" />
+    <Content Include="Workflow\Survey2\Analysis\default.aspx" />
+    <Content Include="Workflow\Survey2\Analysis\ExtractData.aspx" />
+    <Content Include="Workflow\Survey2\Analysis\ExtractParticRpt.aspx" />
+    <Content Include="Workflow\Survey2\Analysis\Industry.aspx" />
+    <Content Include="Workflow\Survey2\Analysis\RefreshData.aspx" />
+    <Content Include="Workflow\Survey2\Collection\default.aspx" />
+    <Content Include="Workflow\Survey2\Collection\Format.aspx" />
+    <Content Include="Workflow\Survey2\Collection\Import.aspx" />
+    <Content Include="Workflow\Survey2\Collection\Validate.aspx" />
+    <Content Include="Workflow\Survey2\default.aspx" />
+    <Content Include="Workflow\Survey2\Design\default.aspx" />
+    <Content Include="Workflow\Survey2\Design\Forms.aspx" />
+    <Content Include="Workflow\Survey2\Design\ImportDataDictionary.aspx" />
+    <Content Include="Workflow\Survey2\Design\Initialize.aspx" />
+    <Content Include="Workflow\Survey2\Design\Items.aspx" />
+    <Content Include="Workflow\Survey2\Design\Status.aspx" />
+    <Content Include="Workflow\Survey2\Editing\Corrections.aspx" />
+    <Content Include="Workflow\Survey2\Editing\default.aspx" />
+    <Content Include="Workflow\Survey2\Editing\DeleteEntireWorkbook.aspx" />
+    <Content Include="Workflow\Survey2\Editing\SubTotalValidate.aspx" />
+    <Content Include="Workflow\Survey2\Editing\trending.aspx" />
+    <Content Include="Workflow\Survey2\Editing\UpdateMOR.aspx" />
+    <Content Include="Workflow\Survey2\Reporting\CreateFactTables.aspx" />
+    <Content Include="Workflow\Survey2\Reporting\default.aspx" />
+    <Content Include="Workflow\Survey3\Collection\Format.aspx" />
+    <Content Include="Workflow\Survey3\Collection\Import.aspx" />
+    <Content Include="Workflow\Survey3\Collection\Validate.aspx" />
+    <Content Include="Workflow\Survey3\Design\ImportDataDictionary.aspx" />
+    <Content Include="Workflow\Survey3\Editing\Corrections.aspx" />
+    <Content Include="Workflow\Survey3\Editing\SubTotalValidate.aspx" />
+    <Content Include="Workflow\Survey3\Reporting\CreateFactTables.aspx" />
+    <Content Include="Workflow\Survey4\Collection\Format.aspx" />
+    <Content Include="Workflow\Survey4\Collection\Import.aspx" />
+    <Content Include="Workflow\Survey4\Collection\Validate.aspx" />
+    <Content Include="Workflow\Survey4\Design\ImportDataDictionary.aspx" />
+    <Content Include="Workflow\Survey4\Editing\Corrections.aspx" />
+    <Content Include="Workflow\Survey4\Editing\SubTotalValidate.aspx" />
+    <Content Include="Workflow\Survey4\Reporting\CreateFactTables.aspx" />
+    <Content Include="Workflow\Survey7\Analysis\NetFlowsExtractAll.aspx" />
+    <Content Include="Workflow\Survey7\Analysis\NetFlowsExtractQuarterly.aspx" />
+    <Content Include="Workflow\Survey7\Collection\BatchProcess.aspx" />
+    <Content Include="Workflow\Survey7\Collection\Format.aspx" />
+    <Content Include="Workflow\Survey7\Collection\Import.aspx" />
+    <Content Include="Workflow\Survey7\Collection\Validate.aspx" />
+    <Content Include="Workflow\Survey7\default.aspx" />
+    <Content Include="Workflow\Survey7\Design\ImportDataDictionary.aspx" />
+    <Content Include="Workflow\Survey7\Design\Importflayout.aspx" />
+    <Content Include="Workflow\Survey7\Design\Initialize.aspx" />
+    <Content Include="Workflow\Survey7\Editing\Corrections.aspx" />
+    <Content Include="Workflow\Survey7\Editing\DeleteEntireWorkbook.aspx" />
+    <Content Include="Workflow\Survey7\Editing\SubTotalValidate.aspx" />
+    <Content Include="Workflow\Survey7\Editing\UpdateMOR.aspx" />
+    <Content Include="Workflow\Survey8\Collection\BatchProcess.aspx" />
+    <Content Include="Workflow\Survey8\Collection\Format.aspx" />
+    <Content Include="Workflow\Survey8\Collection\Import.aspx" />
+    <Content Include="Workflow\Survey8\Collection\Validate.aspx" />
+    <Content Include="Workflow\Survey8\default.aspx" />
+    <Content Include="Workflow\Survey8\Design\ImportDataDictionary.aspx" />
+    <Content Include="Workflow\Survey8\Design\Importflayout.aspx" />
+    <Content Include="Workflow\Survey8\Design\Initialize.aspx" />
+    <Content Include="Workflow\Survey8\Editing\Corrections.aspx" />
+    <Content Include="Workflow\Survey8\Editing\DeleteEntireWorkbook.aspx" />
+    <Content Include="Workflow\Survey8\Editing\SubTotalValidate.aspx" />
+    <Content Include="Workflow\Survey8\Editing\UpdateMOR.aspx" />
+    <Content Include="xml\Menu.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Documentation\" />
+    <Folder Include="downloads\" />
+    <Folder Include="Help\" />
+    <Folder Include="PDFs\" />
+    <Folder Include="Workflow\Survey16\Analysis\" />
+    <Folder Include="Workflow\Survey16\Reporting\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62143</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
